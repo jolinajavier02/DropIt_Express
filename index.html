@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DropIt Express - Fast, Reliable, Global</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for extra icons if needed (socials etc) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-links">
+                <a href="#">Personal</a>
+                <a href="#">Business</a>
+            </div>
+            <div class="top-actions">
+                <a href="#">Language <i class="fa-solid fa-globe"></i></a>
+                <a href="#">Login / Register</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="images/logo.png" alt="DropIt Express Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Tracking</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-text-area">
+                <h1>Express Your <br> <span class="highlight">Business</span> Global</h1>
+                <p>Reliable shipping solutions for everyone, everywhere. Fast, secure, and always on time.</p>
+            </div>
+            
+            <!-- Tracking Box -->
+            <div class="tracking-box">
+                <h2>Track Your Parcel</h2>
+                <div class="tabs">
+                    <button class="tab active">Waybill Number</button>
+                    <button class="tab">Order Number</button>
+                </div>
+                <div class="input-group">
+                    <textarea placeholder="Enter up to 10 waybill numbers, separated by comma."></textarea>
+                </div>
+                <button class="btn-track" onclick="trackParcel()">Track Now <i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Tailored solutions for your delivery needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon-wrapper">
+                        <img src="images/icon_truck.png" alt="Express Delivery">
+                    </div>
+                    <h3>DropIt Express</h3>
+                    <p>Standard next-day delivery service for domestic parcels.</p>
+                    <a href="#" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="icon-wrapper">
+                        <img src="images/icon_package.png" alt="DropIt Box">
+                    </div>
+                    <h3>DropIt Box</h3>
+                    <p>Fixed rate packaging for simpler shipping calculations.</p>
+                    <a href="#" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="icon-wrapper">
+                        <img src="images/icon_support.png" alt="International">
+                    </div>
+                    <h3>International</h3>
+                    <p>Cross-border logistics solutions reaching 200+ countries.</p>
+                    <a href="#" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Download / Banner -->
+    <section class="app-banner">
+        <div class="container">
+            <div class="app-content">
+                <h2>Track on the Go with DropIt App</h2>
+                <p>Get real-time updates and manage your shipments anytime, anywhere.</p>
+                <div class="app-buttons">
+                    <button class="btn-store"><i class="fa-brands fa-apple"></i> App Store</button>
+                    <button class="btn-store"><i class="fa-brands fa-google-play"></i> Google Play</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="images/logo.png" alt="DropIt Logo" class="footer-logo" style="filter: brightness(0) invert(1);">
+                    <p>Connecting the world through fast and reliable logistics services.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="#">Company Profile</a></li>
+                        <li><a href="#">Vision & Mission</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Rates</a></li>
+                        <li><a href="#">Prohibited Items</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DropIt Express. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
