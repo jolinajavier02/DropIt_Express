@@ -294,53 +294,10 @@ ul {
     gap: 5px;
 }
 
-/* App Banner */
-.app-banner {
-    background-color: var(--primary-red);
-    color: var(--white);
-    padding: 60px 0;
-    text-align: center;
-}
-
-.app-content h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.app-content p {
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-    opacity: 0.9;
-}
-
-.app-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.btn-store {
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    color: var(--white);
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: 0.3s;
-}
-
-.btn-store:hover {
-    background: var(--white);
-    color: var(--primary-red);
-}
 
 /* Footer */
 footer {
-    background-color: #222;
+    background-color: primary-red;
     color: #ddd;
     padding: 60px 0 20px;
 }
@@ -383,7 +340,7 @@ footer {
 .social-links a {
     width: 35px;
     height: 35px;
-    background: rgba(255, 255, 255, 0.1);
+    background: white (255, 255, 255, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -391,17 +348,17 @@ footer {
 }
 
 .social-links a:hover {
-    background: var(--primary-red);
+    background: white (255, 255, 255, 0.1);
     color: var(--white);
 }
 
 .footer-bottom {
-    border-top: 1px solid #444;
+    border-top: 1px solid white;
     padding-top: 20px;
     display: flex;
     justify-content: space-between;
     font-size: 0.9rem;
-    color: #888;
+    color: white;
 }
 
 .footer-links a {
