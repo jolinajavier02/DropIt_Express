@@ -586,8 +586,9 @@ footer {
     max-width: 100%;
     height: auto;
     max-height: 500px;
-    border-radius: 15px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    /* Removed border-radius and box-shadow to blend with background */
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .about-text {

@@ -18,6 +18,14 @@ document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
     alert("Mobile menu toggle");
 });
 
+// Video Control (Slow down)
+const dropitVideo = document.querySelector('.about-video');
+if (dropitVideo) {
+    dropitVideo.playbackRate = 0.8; // Slow down a bit
+    // To cut the first scene, we would typically set:
+    // dropitVideo.currentTime = 2; // e.g. skip first 2 seconds
+}
+
 // Hero Slider Logic
 const heroSection = document.getElementById('hero-slider');
 if (heroSection) {
