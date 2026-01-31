@@ -79,25 +79,26 @@
     </nav>
     <!-- Hero Section -->
     <header class="hero">
-        <div class="hero-overlay"></div>
         <div class="container hero-content">
             <div class="hero-text-area">
                 <h1>Express Your <br> <span class="highlight">Business</span> Global</h1>
-                <p>Reliable shipping solutions for everyone, everywhere. Fast, secure, and always on time.</p>
+                <p class="hero-description">Reliable shipping solutions for everyone, everywhere. Fast, secure, and
+                    always on time.</p>
+
+                <div class="hero-quote">
+                    <blockquote>
+                        "Delivery is not just about moving boxes, it's about keeping promises across the globe."
+                    </blockquote>
+                    <cite>- DropIt Express Team</cite>
+                </div>
+
+                <a href="#" class="btn-primary">Get Started</a>
             </div>
 
-            <!-- Tracking Box -->
-            <div class="tracking-box">
-                <h2>Track Your Parcel</h2>
-                <div class="tabs">
-                    <button class="tab active">Waybill Number</button>
-                    <button class="tab">Order Number</button>
-                </div>
-                <div class="input-group">
-                    <textarea placeholder="Enter up to 10 waybill numbers, separated by comma."></textarea>
-                </div>
-                <button class="btn-track" onclick="trackParcel()">Track Now <i
-                        class="fa-solid fa-magnifying-glass"></i></button>
+            <div class="hero-image-area">
+                <!-- Placeholder for the cartoon character -->
+                <img src="https://placehold.co/600x600/E60000/FFFFFF?text=Available+Soon"
+                    alt="Friendly Delivery Character" class="hero-character-img">
             </div>
         </div>
     </header>
@@ -130,9 +131,125 @@
                     <div class="icon-wrapper">
                         <img src="images/icon_support.png" alt="International">
                     </div>
-                    <h3>International</h3>
+                    <h3>DropIt International</h3>
                     <p>Cross-border logistics solutions reaching 200+ countries.</p>
                     <a href="#" class="learn-more">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Drop Package Section -->
+    <section class="drop-package-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-half">
+                    <h2>Drop-Off Your Package</h2>
+                    <p>Conveniently drop off your parcels at any of our widespread locations or schedule a pickup from
+                        your doorstep.</p>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> Over 500+ Drop-off Points</li>
+                        <li><i class="fa-solid fa-check"></i> Secure Locker Options</li>
+                        <li><i class="fa-solid fa-check"></i> No Queue Quick-Drop</li>
+                    </ul>
+                    <a href="#" class="btn-secondary">Find a Location</a>
+                </div>
+                <div class="col-half">
+                    <!-- You might want an image here later -->
+                    <div class="info-box">
+                        <h3>How it works</h3>
+                        <ol>
+                            <li>Pack your item securely.</li>
+                            <li>Generate a label online.</li>
+                            <li>Drop it at the nearest DropIt point.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Details / Tracking Section -->
+    <section class="search-details-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Track & Search</h2>
+                <p>Stay updated with real-time tracking information.</p>
+            </div>
+
+            <div class="search-grid">
+                <div class="search-card">
+                    <i class="fa-solid fa-magnifying-glass-location"></i>
+                    <h3>Track Your Shipment</h3>
+                    <p>Enter your waybill number to see exactly where your package is.</p>
+                    <a href="#">Track Now</a>
+                </div>
+                <div class="search-card">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <h3>Shipping Days</h3>
+                    <p>Check estimated delivery times for different destinations.</p>
+                    <a href="#">Check Schedule</a>
+                </div>
+                <div class="search-card">
+                    <i class="fa-solid fa-calculator"></i>
+                    <h3>Shipping Rates</h3>
+                    <p>Get a quick quote for your shipment instantly.</p>
+                    <a href="#">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Package Information Section -->
+    <section class="package-info-section">
+        <div class="container">
+            <div class="info-content">
+                <h2>Package Information</h2>
+                <p>Ensure your shipment arrives safely by following our packaging guidelines.</p>
+
+                <div class="info-tiles">
+                    <div class="tile">
+                        <h4>Guidelines</h4>
+                        <p>Proper cushioning and sealing techniques.</p>
+                    </div>
+                    <div class="tile">
+                        <h4>Prohibited Items</h4>
+                        <p>List of items restricted for shipping.</p>
+                    </div>
+                    <div class="tile">
+                        <h4>Labeling</h4>
+                        <p>Correct placement of shipping labels.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>How do I track my parcel?</h4>
+                    <p>You can track your parcel by entering the Waybill Number in our tracking tool or via the mobile
+                        app.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What are the prohibited items?</h4>
+                    <p>Flammable items, explosives, currencies, and perishable foods are generally prohibited. See full
+                        list.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>How can I schedule a pickup?</h4>
+                    <p>Log in to your account, select "Schedule Pickup", and choose a convenient time slot.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Do you offer international shipping?</h4>
+                    <p>Yes, we ship to over 200 countries with our DropIt International service.</p>
                 </div>
             </div>
         </div>
