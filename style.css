@@ -436,6 +436,20 @@ footer {
     opacity: 1;
 }
 
+.contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 15px;
+}
+
+.contact-list li i {
+    margin-top: 4px;
+    /* Align with first line of text */
+}
+
 .social-links {
     display: flex;
     gap: 15px;
