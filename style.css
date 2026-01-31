@@ -60,18 +60,25 @@ ul {
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-red);
+    text-decoration: none;
 }
 
-.logo img {
-    height: 40px;
-    width: auto;
-    object-fit: contain;
+.logo-text {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-red);
+    letter-spacing: -0.5px;
+    /* Ensuring 'I' has no dot by using a font that renders clean or Uppercase look */
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-logo-text {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--white);
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
 }
 
 .nav-right {
@@ -83,14 +90,22 @@ ul {
 .nav-links {
     display: flex;
     gap: 30px;
+    align-items: center;
+}
+
+.nav-links>li {
+    position: relative;
+    padding: 10px 0;
 }
 
 .nav-links a {
     font-weight: 600;
     color: var(--text-dark);
     font-size: 1rem;
-    padding: 10px 0;
-    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
 }
 
 .nav-links a:hover,
@@ -98,10 +113,59 @@ ul {
     color: var(--primary-red);
 }
 
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    min-width: 200px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    list-style: none;
+    z-index: 1100;
+}
+
+.dropdown:hover .dropdown-menu,
+.language-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    padding: 0;
+}
+
+.dropdown-menu li a {
+    padding: 10px 20px;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    display: block;
+    width: 100%;
+    font-weight: 500;
+}
+
+.dropdown-menu li a:hover {
+    background: #f5f5f5;
+    color: var(--primary-red);
+}
+
+/* Nav Actions */
 .nav-actions {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
     font-weight: 600;
 }
 
@@ -110,10 +174,21 @@ ul {
     align-items: center;
     gap: 8px;
     color: var(--text-dark);
+    text-decoration: none;
 }
 
 .nav-actions a:hover {
     color: var(--primary-red);
+}
+
+.language-dropdown {
+    position: relative;
+}
+
+.language-dropdown .lang-menu {
+    left: auto;
+    right: 0;
+    min-width: 150px;
 }
 
 .mobile-menu-btn {
