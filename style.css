@@ -391,23 +391,16 @@ ul {
 }
 
 .icon-wrapper {
-    width: 70px;
-    height: 70px;
-    background-color: var(--primary-red);
-    /* Matched to circular background */
-    border-radius: 50%;
+    height: 80px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 25px;
 }
 
 .icon-wrapper img {
-    height: 35px;
-    /* Scaled for circle */
+    height: 60px;
     width: auto;
-    filter: brightness(0) invert(1);
-    /* Make images white icons */
 }
 
 .service-card h3 {
@@ -843,16 +836,9 @@ footer {
 }
 
 .tile-icon {
-    width: 60px;
-    height: 60px;
-    background-color: var(--primary-red);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-    font-size: 1.5rem;
-    color: var(--white);
+    font-size: 2.5rem;
+    color: var(--primary-red);
+    margin-bottom: 20px;
 }
 
 .tile h4 {
@@ -986,18 +972,14 @@ footer {
     text-transform: uppercase;
     letter-spacing: 5px;
     margin-bottom: 20px;
-    color: var(--text-dark);
-    /* Changed from white to dark */
-    text-shadow: none;
-    /* Removed shadow */
+    color: var(--white);
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .hero-content-centered .highlight {
-    color: var(--text-dark);
-    /* Dark text */
-    background: none;
-    /* Removed background */
-    padding: 0;
+    color: var(--white);
+    background: rgba(0, 0, 0, 0.1);
+    padding: 0 10px;
 }
 
 .hero-content-centered p {
@@ -1006,8 +988,7 @@ footer {
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 60px;
-    color: #000;
-    /* Black text */
+    color: var(--white);
 }
 
 .hero-quotes {
@@ -1069,8 +1050,7 @@ footer {
 .section-subtitle-natours {
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--text-dark);
-    /* Match section title color */
+    color: var(--primary-red);
     margin-bottom: 20px;
     text-transform: uppercase;
 }
