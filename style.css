@@ -850,6 +850,17 @@ footer {
     color: var(--text-light);
 }
 
+.faq-more {
+    color: var(--primary-red);
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.faq-more:hover {
+    text-decoration: underline;
+}
+
 /* --- Natours-Inspired Style System (DropIt Red Theme) --- */
 
 /* Hero Wave & Centering */
