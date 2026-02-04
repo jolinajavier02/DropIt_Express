@@ -119,6 +119,25 @@ ul {
     cursor: pointer;
 }
 
+/* Hide chevron icons by default */
+.dropdown i.fa-chevron-down {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    width: 0;
+    margin-left: -5px;
+    /* Pull back to remove gap */
+}
+
+/* Show chevron icons on hover */
+.dropdown:hover i.fa-chevron-down {
+    opacity: 1;
+    visibility: visible;
+    width: auto;
+    margin-left: 5px;
+    /* Restore gap */
+}
+
 .dropdown-menu {
     position: absolute;
     top: 100%;
