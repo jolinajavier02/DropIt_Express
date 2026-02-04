@@ -993,9 +993,9 @@ footer {
     opacity: 0.8;
 }
 
-/* Natours Buttons */
-.btn-primary-natours,
-.btn-outline-natours {
+/* DropIt Buttons */
+.btn-primary-DropIt,
+.btn-outline-DropIt {
     text-transform: uppercase;
     text-decoration: none;
     padding: 15px 40px;
