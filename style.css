@@ -379,6 +379,8 @@ ul {
     text-align: center;
     transition: 0.3s;
     border: 1px solid transparent;
+    border-left: 5px solid var(--primary-red);
+    /* Added red highlight line */
 }
 
 .service-card:hover {
@@ -389,16 +391,23 @@ ul {
 }
 
 .icon-wrapper {
-    height: 80px;
-    margin-bottom: 20px;
+    width: 70px;
+    height: 70px;
+    background-color: var(--primary-red);
+    /* Matched to circular background */
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 auto 25px;
 }
 
 .icon-wrapper img {
-    height: 60px;
+    height: 35px;
+    /* Scaled for circle */
     width: auto;
+    filter: brightness(0) invert(1);
+    /* Make images white icons */
 }
 
 .service-card h3 {
@@ -823,6 +832,8 @@ footer {
     max-width: 350px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     border: 1px solid #eee;
+    border-left: 5px solid var(--primary-red);
+    /* Added red line for consistency */
     transition: 0.3s;
 }
 
@@ -832,9 +843,16 @@ footer {
 }
 
 .tile-icon {
-    font-size: 2.5rem;
-    color: var(--primary-red);
-    margin-bottom: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 1.5rem;
+    color: var(--white);
 }
 
 .tile h4 {
@@ -968,14 +986,18 @@ footer {
     text-transform: uppercase;
     letter-spacing: 5px;
     margin-bottom: 20px;
-    color: var(--white);
-    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    color: var(--text-dark);
+    /* Changed from white to dark */
+    text-shadow: none;
+    /* Removed shadow */
 }
 
 .hero-content-centered .highlight {
-    color: var(--white);
-    background: rgba(0, 0, 0, 0.1);
-    padding: 0 10px;
+    color: var(--text-dark);
+    /* Dark text */
+    background: none;
+    /* Removed background */
+    padding: 0;
 }
 
 .hero-content-centered p {
@@ -984,6 +1006,8 @@ footer {
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 60px;
+    color: #000;
+    /* Black text */
 }
 
 .hero-quotes {
@@ -1045,7 +1069,8 @@ footer {
 .section-subtitle-natours {
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--primary-red);
+    color: var(--text-dark);
+    /* Match section title color */
     margin-bottom: 20px;
     text-transform: uppercase;
 }
@@ -1093,8 +1118,8 @@ footer {
 }
 
 .search-card-natours:hover {
-    transform: translateY(-1.5rem) scale(1.03);
-    border-color: var(--primary-red);
+    /* Hover effect removed from card */
+    border-color: #f0f0f0;
 }
 
 .icon-circle-natours {
@@ -1164,7 +1189,8 @@ footer {
 }
 
 .feature-list-natours li strong {
-    color: var(--primary-red);
+    color: var(--text-dark);
+    /* Highlight is dark text */
 }
 
 .detail-img-natours {
