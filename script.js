@@ -59,3 +59,19 @@ if (heroSection) {
     }, 3000);
 }
 
+// FAQ Accordion Logic
+document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', (e) => {
+        // Toggle active class on the clicked item
+        item.classList.toggle('faq-active');
+
+        // Optional: Close other open FAQ items (Accordion style)
+        /*
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+            if (otherItem !== item) {
+                otherItem.classList.remove('faq-active');
+            }
+        });
+        */
+    });
+});

@@ -119,16 +119,20 @@ ul {
     cursor: pointer;
 }
 
-/* Hide chevron icons by default in Navbar */
+/* Navbar Dropdown Icon Stability */
 .nav-links li a,
 .nav-actions .dropdown a {
     position: relative;
     padding-right: 20px;
+    /* Reserved space to prevent shake */
 }
 
+/* Hide chevron icons by default in Navbar */
 .dropdown i.fa-chevron-down {
     position: absolute;
     right: 0;
+    top: 50%;
+    transform: translateY(-50%);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease;
@@ -887,22 +891,29 @@ footer {
     transition: 0.3s ease;
 }
 
-/* FAQ Hover Behavior */
+/* FAQ Hover Behavior (Icon reveal only) */
 .faq-item:hover {
     cursor: pointer;
 }
 
-.faq-item:hover h4 {
+.faq-item:hover .faq-item-icon {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* FAQ Active State (Triggered by click in JS) */
+.faq-active h4 {
     margin-bottom: 15px;
 }
 
-.faq-item:hover p {
+.faq-active p {
     max-height: 200px;
     opacity: 1;
     margin-top: 10px;
 }
 
-.faq-item:hover .faq-item-icon {
+.faq-active .faq-item-icon {
+    transform: rotate(180deg);
     opacity: 1;
     visibility: visible;
 }
