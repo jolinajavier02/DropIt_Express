@@ -235,11 +235,11 @@ ul {
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 20px;
-    color: var(--text-dark);
+    color: var(--primary-red);
 }
 
 .highlight {
-    color: var(--primary-red);
+    color: var(--text-dark);
 }
 
 .hero-text-area p {
