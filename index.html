@@ -106,8 +106,13 @@
                 </div>
             </div>
             <div class="about-image">
-                <video src="images/main_character.mp4" autoplay loop muted playsinline
-                    class="about-video-natours"></video>
+                <div class="video-container">
+                    <video src="images/main_character.mp4" autoplay loop muted playsinline class="about-video-natours"
+                        id="about-video"></video>
+                    <button class="video-mute-btn" id="video-mute-btn" aria-label="Toggle Mute">
+                        <i class="fa-solid fa-volume-xmark"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </section>

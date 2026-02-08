@@ -18,12 +18,28 @@ document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
     alert("Mobile menu toggle");
 });
 
-// Video Control (Slow down)
-const dropitVideo = document.querySelector('.about-video');
+// Video Control (Slow down & Mute/Unmute)
+const dropitVideo = document.getElementById('about-video');
+const muteBtn = document.getElementById('video-mute-btn');
+
 if (dropitVideo) {
     dropitVideo.playbackRate = 0.8; // Slow down a bit
-    // To cut the first scene, we would typically set:
-    // dropitVideo.currentTime = 2; // e.g. skip first 2 seconds
+}
+
+if (muteBtn && dropitVideo) {
+    muteBtn.addEventListener('click', () => {
+        dropitVideo.muted = !dropitVideo.muted;
+
+        // Update Icon
+        const icon = muteBtn.querySelector('i');
+        if (dropitVideo.muted) {
+            icon.classList.remove('fa-volume-high');
+            icon.classList.add('fa-volume-xmark');
+        } else {
+            icon.classList.remove('fa-volume-xmark');
+            icon.classList.add('fa-volume-high');
+        }
+    });
 }
 
 // Hero Slider Logic

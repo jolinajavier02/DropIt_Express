@@ -971,10 +971,42 @@ footer {
     gap: 20px;
 }
 
-.about-video-natours {
+.video-container {
+    position: relative;
     width: 100%;
     border-radius: 10px;
+    overflow: hidden;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.about-video-natours {
+    width: 100%;
+    display: block;
+}
+
+.video-mute-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--white);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s;
+    font-size: 1.1rem;
+}
+
+.video-mute-btn:hover {
+    background: rgba(230, 0, 0, 0.8);
+    transform: scale(1.1);
 }
 
 /* Why Choose Us Grid & Cards */
