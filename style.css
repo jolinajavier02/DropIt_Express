@@ -954,13 +954,13 @@ footer {
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 30px;
-    color: var(--text-dark);
+    color: var(--primary-red);
 }
 
 .section-subtitle-natours {
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--primary-red);
+    color: var(--text-dark);
     margin-bottom: 20px;
     text-transform: uppercase;
 }
