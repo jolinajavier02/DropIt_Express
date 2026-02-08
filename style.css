@@ -1005,15 +1005,12 @@ footer {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     transition: all .3s ease;
     border: 1px solid #f0f0f0;
-    border-left: 5px solid transparent;
-    /* Reserve space for hover line */
 }
 
 .search-card-natours:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    border-left: 5px solid var(--primary-red);
-    border-color: #eee;
+    border: 1px solid var(--primary-red);
 }
 
 .icon-circle-natours {
