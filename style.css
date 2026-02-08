@@ -1130,24 +1130,18 @@ footer {
 
 .contact-container {
     display: flex;
-    gap: 40px;
+    justify-content: center;
     margin-top: 40px;
-    align-items: flex-start;
 }
 
 .contact-form-card {
-    flex: 2;
+    width: 100%;
+    max-width: 600px;
     background: var(--white);
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     border: 1px solid #f0f0f0;
-}
-
-.contact-info-cards {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
 }
 
 .contact-form .form-group {
@@ -1173,12 +1167,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .contact-container {
-        flex-direction: column;
-    }
-
-    .contact-form-card,
-    .contact-info-cards {
-        width: 100%;
+    .contact-form-card {
+        padding: 30px 20px;
     }
 }
