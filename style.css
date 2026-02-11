@@ -976,7 +976,7 @@ footer {
     width: 100%;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    /* Shadow background removed as requested */
 }
 
 .about-video-natours {
@@ -1002,6 +1002,13 @@ footer {
     z-index: 10;
     transition: all 0.3s;
     font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    /* Added shadow for visibility */
+}
+
+.video-mute-btn i {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    /* Icon shadow */
 }
 
 .video-mute-btn:hover {
