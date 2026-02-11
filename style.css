@@ -8,8 +8,8 @@
 :root {
     --primary-red: #E60000;
     --dark-red: #B30000;
-    --primary-blue: #2A3B8F;
-    /* Professional logistics blue */
+    --primary-blue: #0047AB;
+    /* Branded blue */
     --text-dark: #333333;
     --text-light: #666666;
     --white: #FFFFFF;
@@ -71,11 +71,11 @@ ul {
     display: flex;
     align-items: flex-end;
     font-size: 2.2rem;
-    font-weight: 950;
+    font-weight: 900;
     font-style: italic;
     font-family: 'Inter', sans-serif;
-    letter-spacing: -1.5px;
-    line-height: 1;
+    letter-spacing: -1px;
+    line-height: 0.8;
 }
 
 .logo-drop {
