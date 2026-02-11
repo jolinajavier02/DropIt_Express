@@ -103,8 +103,8 @@ ul {
     font-style: italic;
     letter-spacing: 0.5px;
     margin-top: -4px;
-    margin-left: -20px;
-    /* Shifted left to align under the 'p' of Drop */
+    margin-left: -12px;
+    /* Adjusted to avoid collision with the 'p' stem */
 }
 
 .footer-logo-text {
