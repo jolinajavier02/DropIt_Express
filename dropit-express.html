@@ -4,47 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - DropIt Express</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>DropIt Express Delivery - Fast & Reliable</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .faq-page-content {
-            padding: 100px 0;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-page-title {
-            text-align: center;
-            margin-bottom: 50px;
-            color: var(--primary-red);
-            font-size: 2.5rem;
-        }
-
-        .faq-detailed-item {
-            margin-bottom: 40px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 20px;
-        }
-
-        .faq-detailed-item h3 {
-            color: var(--text-dark);
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-
-        .faq-detailed-item p {
-            color: var(--text-light);
-            line-height: 1.8;
-        }
-    </style>
 </head>
 
 <body>
-    <!-- Navigation (Copied from index.html for consistency) -->
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
@@ -62,7 +30,7 @@
                     <li><a href="index.html">Home</a></li>
 
                     <li class="dropdown">
-                        <a href="#">Services <i class="fa-solid fa-chevron-down"></i></a>
+                        <a href="#" class="active">Services <i class="fa-solid fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="dropit-express.html">DropIt Express</a></li>
                             <li><a href="#">DropIt Box</a></li>
@@ -81,61 +49,78 @@
                     <li class="dropdown">
                         <a href="#">Search <i class="fa-solid fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="faq.html">FAQ</a></li>
                             <li><a href="#">Find Branch</a></li>
                             <li><a href="#">Shipping Days</a></li>
                             <li><a href="#">Shipping Rates</a></li>
                             <li><a href="#">Track & Trace</a></li>
                         </ul>
                     </li>
+                    <li><a href="index.html#contact">Contact</a></li>
                 </ul>
 
                 <div class="nav-actions">
                     <a href="#" class="login-link">
                         <i class="fa-solid fa-user"></i> Login/Signin
                     </a>
+
+                    <div class="language-dropdown">
+                        <div class="dropdown">
+                            <a href="#">
+                                <i class="fa-solid fa-globe"></i> World Wide <i class="fa-solid fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu lang-menu">
+                                <li><a href="#">English</a></li>
+                                <li><a href="#">Filipino</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
                 </div>
             </div>
         </div>
     </nav>
 
-    <main class="container faq-page-content">
-        <h1 class="faq-page-title">Frequently Asked Questions</h1>
-
-        <div class="faq-detailed-item">
-            <h3>How do I track my parcel?</h3>
-            <p>You can track your parcel by entering the Waybill Number in our tracking tool on the homepage or via the
-                DropIt Express mobile app. Once entered, you will see real-time updates on your shipment's current
-                location and estimated delivery time.</p>
+    <!-- Page Hero -->
+    <section class="page-hero"
+        style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/dropit-express-hero.png'); background-size: cover; background-position: center; padding: 120px 0; color: white; text-align: center;">
+        <div class="container">
+            <h1 class="section-title-natours" style="color: white; font-size: 3.5rem; margin-bottom: 20px;">DropIt
+                Express Delivery</h1>
+            <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto; opacity: 0.9;">Fast, secure, and reliable
+                doorstep delivery for your essential parcels. Experience the next level of logistics.</p>
         </div>
+    </section>
 
-        <div class="faq-detailed-item">
-            <h3>What are the prohibited items?</h3>
-            <p>For safety reasons, we do not ship flammable items, explosives, currencies, perishable foods, or
-                hazardous materials. Please refer to our complete list of prohibited items in the Package Information
-                section for more details.</p>
+    <!-- Content Section -->
+    <section class="service-detail" style="padding: 100px 0; background-color: var(--bg-gray);">
+        <div class="container" style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 300px;">
+                <h2 class="section-title-natours">Next-Day Delivery Service</h2>
+                <h3 class="section-subtitle-natours" style="color: var(--text-dark);">Reliability is our priority.</h3>
+                <p style="margin-bottom: 30px; font-size: 1.1rem; color: var(--text-light);">
+                    Our flagship DropIt Express service is designed for those who need urgency without compromising
+                    safety.
+                    Whether it's an important document or a gift for a loved one, we ensure it reaches its destination
+                    with speed and care.
+                </p>
+                <div class="btn-group-natours">
+                    <a href="#" class="btn-primary-natours">Book a Shipment</a>
+                    <a href="#" class="btn-outline-natours">Track Parcel</a>
+                </div>
+            </div>
+            <div style="flex: 1; min-width: 300px;">
+                <div class="video-container" style="box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                    <video src="images/main_character.mp4" autoplay loop muted playsinline
+                        style="width: 100%; border-radius: 10px;"></video>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="faq-detailed-item">
-            <h3>How can I schedule a pickup?</h3>
-            <p>To schedule a pickup, simply log in to your account, select "Schedule Pickup", and choose a convenient
-                time slot and location. A DropIt agent will be dispatched to collect your package at the scheduled time.
-            </p>
-        </div>
-
-        <div class="faq-detailed-item">
-            <h3>Do you offer international shipping?</h3>
-            <p>Yes, DropIt Express offers global logistics solutions reaching over 200 countries. Our DropIt
-                International service ensures competitive rates and reliable delivery timelines for your overseas
-                shipments.</p>
-        </div>
-
-        <div style="text-align: center; margin-top: 50px;">
-            <a href="index.html" class="btn-primary-natours">Back to Home</a>
-        </div>
-    </main>
-
-    <!-- Footer (Simplified) -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -167,7 +152,7 @@
                         <li><a href="#">Prohibited Items</a></li>
                     </ul>
                 </div>
-                <div class="footer-col" style="text-align: left;">
+                <div class="footer-col">
                     <h4>Contact Us</h4>
                     <ul class="contact-list">
                         <li><i class="fa-solid fa-mobile-screen"></i> 09123456789</li>
@@ -176,13 +161,15 @@
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+            <div class="footer-bottom">
                 <p>&copy; 2026 DropIt Express. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
             </div>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 
 </html>
