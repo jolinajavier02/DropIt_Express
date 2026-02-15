@@ -878,18 +878,19 @@ footer {
 
 /* Hero Wave & Centering */
 .hero {
-    height: 95vh;
-    /* Larger for Natours feel */
+    height: 60vh;
+    /* Minimized from 95vh for a better balance */
+    min-height: 450px;
     background-size: cover;
-    background-position: top;
+    background-position: center;
     position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: var(--white);
     padding: 0;
+    overflow: hidden;
 }
 
 .hero-overlay-natours {
@@ -905,30 +906,26 @@ footer {
 .hero-content-centered {
     position: relative;
     z-index: 2;
+    padding: 0 20px;
 }
 
 .hero-content-centered h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
+    font-size: 3rem;
+    /* Slightly smaller for the new hero size */
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 5px;
-    margin-bottom: 20px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
     color: var(--white);
-    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.hero-content-centered .highlight {
-    color: var(--white);
-    background: rgba(0, 0, 0, 0.1);
-    padding: 0 10px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content-centered p {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 60px;
+    letter-spacing: 1.5px;
+    margin-bottom: 40px;
     color: var(--white);
 }
 
