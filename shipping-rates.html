@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Rates - DropIt Express</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-text">
+                    <span class="logo-drop">Drop</span>
+                    <div class="logo-it-express">
+                        <span class="logo-it">It</span>
+                        <span class="logo-express">Express</span>
+                    </div>
+                </div>
+            </a>
+
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Services <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="dropit-express.html">DropIt Express</a></li>
+                            <li><a href="dropit-international.html">DropIt International</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Drop Package <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="drop-off.html">Drop-Off Package</a></li>
+                            <li><a href="#">My Shipments</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="active">Search <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="find-branch.html">Find Branch</a></li>
+                            <li><a href="#">Shipping Days</a></li>
+                            <li><a href="shipping-rates.html">Shipping Rates</a></li>
+                            <li><a href="tracking.html">Track & Trace</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero" style="background-image: url('images/dropit-generic-hero.png');">
+        <div class="hero-overlay-natours"></div>
+        <div class="container hero-content-centered">
+            <h1>Shipping Rates</h1>
+            <p>Calculate your shipment costs instantly.</p>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <section class="content-section" style="padding: 100px 0; text-align: center;">
+        <div class="container">
+            <h2 class="section-title-natours">Rate Calculator</h2>
+            <p style="font-size: 1.2rem; color: var(--text-light); margin-bottom: 40px;">Get a transparent quote based
+                on weight, dimensions, and destination.</p>
+            <div class="contact-container"
+                style="max-width: 600px; margin: 0 auto; border: 2px solid var(--primary-red); border-radius: 20px; padding: 40px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                    <input type="text" placeholder="Origin"
+                        style="padding: 15px; border-radius: 10px; border: 1px solid #ddd;">
+                    <input type="text" placeholder="Destination"
+                        style="padding: 15px; border-radius: 10px; border: 1px solid #ddd;">
+                </div>
+                <input type="number" placeholder="Weight (kg)"
+                    style="width: 100%; padding: 15px; border-radius: 10px; border: 1px solid #ddd; margin-bottom: 20px;">
+                <button class="btn-primary-natours" style="width: 100%; border: none; cursor: pointer;">Calculate
+                    Rate</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo footer-logo-text">
+                        <div class="logo-text"><span class="logo-drop">Drop</span>
+                            <div class="logo-it-express"><span class="logo-it">It</span><span
+                                    class="logo-express">Express</span></div>
+                        </div>
+                    </a>
+                    <p>Connecting the world through fast and reliable logistics services.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DropIt Express. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
