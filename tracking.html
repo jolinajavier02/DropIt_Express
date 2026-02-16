@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drop-Off Package - DropIt Express</title>
+    <title>Track Your Parcel - DropIt Express</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -39,7 +39,7 @@
                     </li>
 
                     <li class="dropdown">
-                        <a href="#" class="active">Drop Package <i class="fa-solid fa-chevron-down"></i></a>
+                        <a href="#">Drop Package <i class="fa-solid fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="drop-off.html">Drop-Off Package</a></li>
                             <li><a href="#">My Shipments</a></li>
@@ -47,7 +47,7 @@
                     </li>
 
                     <li class="dropdown">
-                        <a href="#">Search <i class="fa-solid fa-chevron-down"></i></a>
+                        <a href="#" class="active">Search <i class="fa-solid fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="faq.html">FAQ</a></li>
                             <li><a href="#">Find Branch</a></li>
@@ -85,35 +85,40 @@
     </nav>
 
     <!-- Page Hero -->
-    <header class="hero" style="background-image: url('images/drop-off-hero.png');">
+    <header class="hero" style="background-image: url('images/dropit-generic-hero.png');">
         <div class="hero-overlay-natours"></div>
         <div class="container hero-content-centered">
-            <h1>Drop-Off Your Package</h1>
-            <p>Ready to ship? Just drop it off at any of our branches nationwide.</p>
+            <h1>Track Your Shipment</h1>
+            <p>Enter your waybill number below to get real-time updates on your package.</p>
         </div>
     </header>
 
-    <!-- Content Section -->
-    <section class="service-detail" style="padding: 100px 0; background-color: var(--white);">
-        <div class="container" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
-            <div style="flex: 1; min-width: 300px;">
-                <h2 class="section-title-natours">Hassle-Free Drop-Off</h2>
-                <h3 class="section-subtitle-natours" style="color: var(--primary-red); letter-spacing: 2px;">SIMPLE &
-                    SECURE</h3>
-                <p style="margin-bottom: 30px; font-size: 1.15rem; color: var(--text-light); line-height: 1.8;">
-                    Dropping off your package has never been easier. With over 1,000 branches strategically located
-                    across the country, you're never far from a DropIt Express point. Our friendly staff will assist you
-                    with weighing, measuring, and confirming your shipment details on the spot.
-                </p>
-                <div class="btn-group-natours">
-                    <a href="#" class="btn-primary-natours">Find a Branch</a>
-                    <a href="#" class="btn-outline-natours">View Rates</a>
-                </div>
+    <!-- Tracking Section -->
+    <section class="content-section" style="padding: 100px 0; background-color: var(--white);">
+        <div class="container">
+            <div class="section-header-natours">
+                <span class="section-label">Real-Time Tracking</span>
+                <h2>Shipment Status</h2>
+                <p>Stay informed about your package's journey every step of the way.</p>
             </div>
-            <div style="flex: 1; min-width: 300px;">
-                <div class="video-container"
-                    style="box-shadow: 0 30px 60px rgba(0,0,0,0.15); border-radius: 15px; overflow: hidden;">
-                    <img src="images/drop-off-hero.png" alt="Drop Off" style="width: 100%; display: block;">
+
+            <div class="contact-container" style="max-width: 800px; margin: 0 auto;">
+                <div class="contact-form-card"
+                    style="padding: 40px; border: 2px solid var(--primary-red); border-radius: 20px;">
+                    <div class="input-group" style="margin-bottom: 25px;">
+                        <label
+                            style="display: block; margin-bottom: 10px; font-weight: 700; color: var(--text-dark);">Waybill
+                            Number(s)</label>
+                        <textarea placeholder="Enter tracking number(s), separated by commas or new lines..." rows="4"
+                            style="width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1rem;"></textarea>
+                    </div>
+                    <button onclick="trackParcel()" class="btn-primary-natours"
+                        style="width: 100%; border: none; cursor: pointer;">
+                        <i class="fa-solid fa-magnifying-glass" style="margin-right: 10px;"></i> Search Shipment
+                    </button>
+                    <p style="margin-top: 20px; font-size: 0.9rem; color: var(--text-light); text-align: center;">
+                        You can track up to 10 parcels at once.
+                    </p>
                 </div>
             </div>
         </div>
@@ -169,6 +174,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
