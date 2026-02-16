@@ -306,7 +306,7 @@
             <div class="intl-cards-grid">
                 <!-- Affordable Rates -->
                 <div class="intl-card">
-                    <img src="images/intl-affordable.png" alt="Affordable Rates" class="intl-card-img">
+                    <img src="images/intl-affordable-v2.png" alt="Affordable Rates" class="intl-card-img">
                     <div class="intl-card-content">
                         <div class="intl-card-icon"><i class="fa-solid fa-piggy-bank"></i></div>
                         <h3>Affordable Rates</h3>
@@ -338,132 +338,207 @@
         </div>
     </section>
 
-    <!--Avaition Restrictions-->
-
-    <!-- Prohibited Items Section -->
-    <section class="content-section">
+    <!-- Aviation Restrictions -->
+    <section class="content-section" id="aviation-restrictions">
         <div class="container">
             <div class="section-header-natours">
-                <h2>Prohibited Items in Aviation</h2>
-                <p>Critical safety regulations for air-freight shipments</p>
+                <span class="section-label">Safety First</span>
+                <h2>Aviation Restrictions</h2>
+                <p>Ensuring safety and security in global air-freight transport</p>
             </div>
 
-            <div class="search-grid-natours" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px;">
-                <div class="search-card-natours" style="align-items: flex-start; text-align: left; padding: 40px;">
-                    <div class="icon-circle-natours" style="background-color: #fff0f0;"><i
-                            class="fa-solid fa-flask-vial" style="color: var(--primary-red);"></i></div>
-                    <h3>Liquid, Powder, Pastes, Granular Product</h3>
-                    <p style="font-size: 0.9rem; line-height: 1.6;">
-                        <strong>Receiving operation requirements:</strong><br>
-                        - Liquids, powders, pastes, and granular objects can be euphemistically refused and not accepted
-                        if the safety attributes of the consignment cannot be determined;<br>
-                        - In the case that the consignment is determined to be non-illegal or non-dangerous goods (the
-                        customer is required to provide safety instructions), it can be arranged for transportation by
-                        truck.
-                    </p>
-                </div>
+            <div class="section-header-natours" style="margin-top: 60px;">
+                <h3 style="color: var(--primary-red); letter-spacing: 2px;">PROHIBITED ITEMS</h3>
+                <p>Items strictly banned from all shipping services to maintain public safety.</p>
+            </div>
 
-                <div class="search-card-natours" style="align-items: flex-start; text-align: left; padding: 40px;">
-                    <div class="icon-circle-natours" style="background-color: #fff0f0;"><i
-                            class="fa-solid fa-battery-half" style="color: var(--primary-red);"></i></div>
-                    <h3>Battery Operated Products</h3>
-                    <p style="font-size: 0.9rem; line-height: 1.6;">
-                        - Electromechanical separation, battery independent, insulated, shockproof packaging; make sure
-                        that the battery is detached before shipment.<br>
-                        - The all-in-one machine is forbidden to collect;<br>
-                        - It is forbidden to accept and send batteries, and lithium batteries with a capacity of more
-                        than 20,000 mAh (100Wh) are prohibited from receiving and sending.
-                    </p>
+            <div class="search-grid-natours items-grid">
+                <div class="search-card-natours">
+                    <div class="icon-circle-natours"><i class="fa-solid fa-bomb"></i></div>
+                    <h3>Explosives</h3>
+                    <p>TNT, gunpowder, firecrackers, and any pressure-sensitive explosive devices.</p>
                 </div>
 
                 <div class="search-card-natours">
-                    <div class="icon-circle-natours"><i class="fa-solid fa-bomb"></i></div>
-                    <h3>Explosive Materials</h3>
-                    <p>TNT, gunpowder, firecrackers, and any pressure-sensitive explosive devices are strictly banned
-                        from all airline transport.</p>
+                    <div class="icon-circle-natours"><i class="fa-solid fa-wind"></i></div>
+                    <h3>Gases</h3>
+                    <p>Flammable Gases (Acetylene, butane), Non Toxic Gases (Oxygen, CO), Toxic Gases (Chlorine,
+                        mercury).</p>
+                </div>
+
+                <div class="search-card-natours">
+                    <div class="icon-circle-natours"><i class="fa-solid fa-droplet"></i></div>
+                    <h3>Flammable Liquids</h3>
+                    <p>Gasoline, diesel, kerosene, petroleum, acetone, paint and paint-related materials.</p>
+                </div>
+
+                <div class="search-card-natours">
+                    <div class="icon-circle-natours"><i class="fa-solid fa-fire"></i></div>
+                    <h3>Flammable solid</h3>
+                    <p>Coal, matches, sawdust, coconut shells, sulfur, Yellow phosphorus, alkali metals.</p>
+                </div>
+
+                <div class="search-card-natours">
+                    <div class="icon-circle-natours"><i class="fa-solid fa-skull-crossbones"></i></div>
+                    <h3>Toxic Substances</h3>
+                    <p>Mercury, bleach, battery acid, pesticides, bacteria, fungi, viruses, parasites, specimens.</p>
+                </div>
+
+                <div class="search-card-natours">
+                    <div class="icon-circle-natours"><i class="fa-solid fa-radiation"></i></div>
+                    <h3>Radioactive materials</h3>
+                    <p>Uranium, Radium, Alpha Radiation, Polonium, Cobalt and other radioactive elements.</p>
+                </div>
+
+                <div class="search-card-natours">
+                    <div class="icon-circle-natours"><i class="fa-solid fa-flask"></i></div>
+                    <h3>Corrosives</h3>
+                    <p>Acids/acid solutions, Battery fluid, Fuel cell cartridges, Hydrochloric acid, Sulfuric acid.</p>
+                </div>
+
+                <div class="search-card-natours">
+                    <div class="icon-circle-natours"><i class="fa-solid fa-pills"></i></div>
+                    <h3>Illegal Drugs</h3>
+                    <p>Morphine, Heroin, Cocaine, Methamphetamine, Marijuana, and all other illegal narcotics.</p>
                 </div>
 
                 <div class="search-card-natours">
                     <div class="icon-circle-natours"><i class="fa-solid fa-biohazard"></i></div>
-                    <h3>Toxic & Infections</h3>
-                    <p>Biological hazards, viruses, infectious bacteria, and chemical poisons that pose a massive risk
-                        to airline personnel and passengers.</p>
+                    <h3>Biomedical Wastes</h3>
+                    <p>Used syringes, body organs, human remains, dead animals, and clinical specimens.</p>
+                </div>
+
+                <div class="search-card-natours">
+                    <div class="icon-circle-natours"><i class="fa-solid fa-paw"></i></div>
+                    <h3>Live Animals</h3>
+                    <p>Fish, Snake, Pigeon, Dogs, Cats or any categories of live animals.</p>
+                </div>
+
+                <div class="search-card-natours">
+                    <div class="icon-circle-natours"><i class="fa-solid fa-wine-glass"></i></div>
+                    <h3>Liquor & Beverages</h3>
+                    <p>All types of alcoholic beverages, including local Philippine wines and spirits.</p>
+                </div>
+
+                <div class="search-card-natours">
+                    <div class="icon-circle-natours"><i class="fa-solid fa-bullhorn"></i></div>
+                    <h3>Negative Propagandas</h3>
+                    <p>Slanderous, libelous, or misinformation materials building false public images.</p>
+                </div>
+            </div>
+
+            <div class="section-header-natours" style="margin-top: 80px;">
+                <h3 style="color: var(--primary-red); letter-spacing: 2px;">RESTRICTED ITEMS</h3>
+                <p>Items requiring special handling or specific permits for airline delivery.</p>
+            </div>
+
+            <div class="search-grid-natours items-grid">
+                <div class="search-card-natours">
+                    <div class="icon-circle-natours"><i class="fa-solid fa-smoking"></i></div>
+                    <h3>Tobacco & Cigarettes</h3>
+                    <p>Lighters (Flint-free, Electric), Plasma Lighter, E-cigarettes and associated products.</p>
+                </div>
+
+                <div class="search-card-natours">
+                    <div class="icon-circle-natours"><i class="fa-solid fa-hand-fist"></i></div>
+                    <h3>Coercion items</h3>
+                    <p>Controlled Knives (daggers, switch knives), crossbows, spears, and handcuffs.</p>
+                </div>
+
+                <div class="search-card-natours">
+                    <div class="icon-circle-natours"><i class="fa-solid fa-apple-whole"></i></div>
+                    <h3>Perishable goods</h3>
+                    <p>Meat, seafood, dairy, fruit and vegetables, flowers, and pharmaceuticals.</p>
+                </div>
+
+                <div class="search-card-natours">
+                    <div class="icon-circle-natours"><i class="fa-solid fa-leaf"></i></div>
+                    <h3>Environmental items</h3>
+                    <p>Succulent Plants and other flora requiring specific environmental controls.</p>
+                </div>
+
+                <div class="search-card-natours">
+                    <div class="icon-circle-natours"><i class="fa-solid fa-seedling"></i></div>
+                    <h3>Granular products</h3>
+                    <p>Rice, Coffee Granules, Granular Fertilizers, and dry animal feeds.</p>
+                </div>
+
+                <div class="search-card-natours">
+                    <div class="icon-circle-natours"><i class="fa-solid fa-candy-cane"></i></div>
+                    <h3>Repacked goods</h3>
+                    <p>Chocolates, Candies, Gummy Bears, Choco Powder, Coffees, and Sugars.</p>
+                </div>
+
+                <div class="search-card-natours">
+                    <div class="icon-circle-natours"><i class="fa-solid fa-money-bill-1"></i></div>
+                    <h3>Currency</h3>
+                    <p>Bills, coins, cheques, and other sensitive financial documents.</p>
+                </div>
+
+                <div class="search-card-natours">
+                    <div class="icon-circle-natours"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Oxidizers</h3>
+                    <p>Oxidising Substances like Ammonium perchlorate and organic peroxides.</p>
+                </div>
+
+                <div class="search-card-natours">
+                    <div class="icon-circle-natours"><i class="fa-solid fa-battery-full"></i></div>
+                    <h3>Battery Products</h3>
+                    <p>Powerbanks, Solar Generators, and other high-capacity battery units.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Restricted Items Section -->
-    <section class="content-section" style="background-color: #f9f9f9;">
-        <div class="container">
-            <div class="section-header-natours">
-                <h2>Restricted Items</h2>
-                <p>Items requiring airline clearance or specific international documentation</p>
-            </div>
-
-            <div class="search-grid-natours" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
-                <div class="search-card-natours">
-                    <div class="icon-circle-natours"><i class="fa-solid fa-pills"></i></div>
-                    <h3>Pharmaceuticals</h3>
-                    <p>Requires medical prescription and international safety data sheets (MSDS).</p>
-                </div>
-
-                <div class="search-card-natours">
-                    <div class="icon-circle-natours"><i class="fa-solid fa-gem"></i></div>
-                    <h3>High-Value Goods</h3>
-                    <p>Jewelry, precious stones, and rare metals require specific insurance and secure transport
-                        permits.</p>
-                </div>
-
-                <div class="search-card-natours">
-                    <div class="icon-circle-natours"><i class="fa-solid fa-file-shield"></i></div>
-                    <h3>Sensitive Documents</h3>
-                    <p>Passports, legal deeds, and original certifications require tracked high-priority handling.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
 
     <!-- Terms and Conditions Section -->
     <section class="content-section" style="background-color: #fcfcfc;">
         <div class="container">
             <div class="section-header-natours">
-                <h2>International Shipping Terms</h2>
-                <p>Legal guidelines for global transport and aviation safety</p>
+                <h2>TERMS AND CONDITIONS</h2>
+                <p>Guidelines for every international shipment handled by DropIt Express</p>
             </div>
 
             <div class="terms-container">
                 <div class="terms-list">
                     <div class="terms-item">
                         <div class="terms-content">
-                            <h4>Aviation Safety Compliance</h4>
-                            <p>All shipments must comply with IATA (International Air Transport Association)
-                                regulations. Any item found to endanger the aircraft or its passengers will be seized by
-                                airport security.</p>
-                        </div>
-                    </div>
-                    <div class="terms-item">
-                        <div class="terms-content">
-                            <h4>Customs & Duties</h4>
-                            <p>The sender or receiver is responsible for any import duties, taxes, or customs fees
-                                levied by the destination country. DropIt International handles clearance but cannot
-                                waive legal fees.</p>
-                        </div>
-                    </div>
-                    <div class="terms-item">
-                        <div class="terms-content">
-                            <h4>Global Weight Limits</h4>
-                            <p>Max weight per individual parcel via air freight is 30kg for standard international
-                                express. Heavier items require palletized freight services and 48-hour advance notice.
+                            <h4>1. STANDARD RATES</h4>
+                            <p>Standard rates apply with an additional premium service fee for Door-to-Door, Walk-in,
+                                and VIP transactions. Other discounts and promotions are not applicable to this service.
                             </p>
                         </div>
                     </div>
                     <div class="terms-item">
                         <div class="terms-content">
-                            <h4>Delivery Lead Times</h4>
-                            <p>Estimates are subject to flight schedules, airline availability, and local customs
-                                processing times at the destination port.</p>
+                            <h4>2. ACCEPTED ITEMS</h4>
+                            <p>Only parcels availing of the DropIt Express delivery are acceptable. Items prohibited in
+                                aviation will be rejected.</p>
+                        </div>
+                    </div>
+                    <div class="terms-item">
+                        <div class="terms-content">
+                            <h4>3. SUPER SERVICE</h4>
+                            <p>The DropIt Logistics service is applicable for Walk-in, Door-to-Door (D2D) Free Pickup
+                                Service, and VIP Clients.</p>
+                        </div>
+                    </div>
+                    <div class="terms-item">
+                        <div class="terms-content">
+                            <h4>4. AIR TRANSPORT</h4>
+                            <p>Customers shipping from NCR/Luzon to Visayas or Mindanao with packages limited to:</p>
+                            <ul class="sub-list"
+                                style="list-style: disc; padding-left: 40px; margin-top: 10px; color: var(--text-light);">
+                                <li>5kg only</li>
+                                <li>Contain non-prohibited items suitable for air transport</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="terms-item">
+                        <div class="terms-content">
+                            <h4>5. NATIONWIDE COVERAGE</h4>
+                            <p>The service is available nationwide. Shipments from the National Capital Region (NCR) and
+                                Greater Manila Area (GMA) are transported via air to Visayas and Mindanao, while all
+                                other routes are delivered on land with improved lead times guaranteed.</p>
                         </div>
                     </div>
                 </div>
