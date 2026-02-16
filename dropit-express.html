@@ -9,6 +9,150 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: var(--white);
+        }
+
+        .section-label {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: white;
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+        .content-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .terms-container {
+            border: 2px solid var(--primary-red);
+            border-radius: 30px;
+            padding: 60px;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        .terms-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .terms-header h2 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .terms-header .divider {
+            width: 60px;
+            height: 6px;
+            background-color: var(--primary-red);
+            margin: 0 auto;
+        }
+
+        .terms-list {
+            list-style: none;
+            counter-reset: terms-counter;
+        }
+
+        .terms-item {
+            margin-bottom: 25px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .terms-item::before {
+            counter-increment: terms-counter;
+            content: counter(terms-counter) ".";
+            font-weight: 800;
+            color: var(--primary-red);
+            font-size: 1.4rem;
+            min-width: 30px;
+        }
+
+        .terms-content h4 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .terms-content p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .sub-list {
+            margin-top: 10px;
+            list-style: lower-alpha;
+            padding-left: 20px;
+            color: var(--text-light);
+        }
+
+        .list-section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .list-section-header h2 {
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-dark);
+        }
+
+        .items-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .category-group {
+            margin-bottom: 20px;
+        }
+
+        .category-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            cursor: default;
+        }
+
+        .category-title i {
+            color: var(--primary-red);
+            font-size: 0.8rem;
+        }
+
+        .category-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            padding-left: 20px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .terms-container {
+                padding: 30px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -93,27 +237,290 @@
         </div>
     </header>
 
-    <!-- Content Section -->
-    <section class="service-detail" style="padding: 100px 0; background-color: var(--bg-gray);">
-        <div class="container" style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap;">
-            <div style="flex: 1; min-width: 300px;">
-                <h2 class="section-title-natours">Next-Day Delivery Service</h2>
-                <h3 class="section-subtitle-natours" style="color: var(--text-dark);">Reliability is our priority.</h3>
-                <p style="margin-bottom: 30px; font-size: 1.1rem; color: var(--text-light);">
-                    Our flagship DropIt Express service is designed for those who need urgency without compromising
-                    safety.
-                    Whether it's an important document or a gift for a loved one, we ensure it reaches its destination
-                    with speed and care.
-                </p>
-                <div class="btn-group-natours">
-                    <a href="#" class="btn-primary-natours">Book a Shipment</a>
-                    <a href="#" class="btn-outline-natours">Track Parcel</a>
+    <!-- Local Courier Shipments Section -->
+    <section class="content-section" style="padding-bottom: 40px;">
+        <div class="container">
+            <span class="section-label">Service Overview</span>
+            <div style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 350px;">
+                    <h2 class="section-title-natours">Local Courier Shipments</h2>
+                    <h3 class="section-subtitle-natours" style="color: var(--primary-red); letter-spacing: 2px;">
+                        NATIONWIDE REACH</h3>
+                    <p style="margin-bottom: 30px; font-size: 1.15rem; color: var(--text-light); line-height: 1.8;">
+                        Our localized courier network ensures that your packages are handled with the utmost care from
+                        pick-up to delivery. We specialize in point-to-point domestic shipping across all major cities,
+                        providing real-time tracking and guaranteed safety for every parcel you trust us with.
+                    </p>
+                    <div class="btn-group-natours">
+                        <a href="#" class="btn-primary-natours">Book a Shipment</a>
+                        <a href="#" class="btn-outline-natours">Track Parcel</a>
+                    </div>
+                </div>
+                <div style="flex: 1; min-width: 350px;">
+                    <div class="image-container"
+                        style="box-shadow: 0 30px 60px rgba(0,0,0,0.15); border-radius: 15px; overflow: hidden;">
+                        <img src="images/local-courier.png" alt="Local Courier Shipment"
+                            style="width: 100%; display: block;">
+                    </div>
                 </div>
             </div>
-            <div style="flex: 1; min-width: 300px;">
-                <div class="video-container" style="box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
-                    <video src="images/main_character.mp4" autoplay loop muted playsinline
-                        style="width: 100%; border-radius: 10px;"></video>
+        </div>
+    </section>
+
+    <!-- Terms and Conditions Section -->
+    <section class="content-section">
+        <div class="container">
+            <span class="section-label">Compliance</span>
+            <div class="terms-container">
+                <div class="terms-header">
+                    <h2>Terms and Conditions</h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="terms-list">
+                    <div class="terms-item">
+                        <div class="terms-content">
+                            <h4>Standard Rates</h4>
+                            <p>Standard rates apply with an additional premium service fee for Door-to-Door, Walk-in,
+                                and VIP transactions. Other discounts and promotions are not applicable to this service.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="terms-item">
+                        <div class="terms-content">
+                            <h4>Accepted Items</h4>
+                            <p>Only parcels availing of the J&T Super delivery are acceptable. Items prohibited in
+                                aviation will be rejected.</p>
+                        </div>
+                    </div>
+                    <div class="terms-item">
+                        <div class="terms-content">
+                            <h4>Super Service</h4>
+                            <p>The J&T Super (SP) service is applicable for Walk-in, Door-to-Door (D2D) Free Pickup
+                                Service, and VIP Clients.</p>
+                        </div>
+                    </div>
+                    <div class="terms-item">
+                        <div class="terms-content">
+                            <h4>Air Transport</h4>
+                            <p>Customers shipping from NCR/Luzon to Visayas or Mindanao with packages limited to:</p>
+                            <ul class="sub-list">
+                                <li>5kg only</li>
+                                <li>Contain non-prohibited items suitable for air transport</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="terms-item">
+                        <div class="terms-content">
+                            <h4>Nationwide Coverage</h4>
+                            <p>The service is available nationwide. Shipments from the National Capital Region (NCR) and
+                                Greater Manila Area (GMA) are transported via air to Visayas and Mindanao, while all
+                                other routes are delivered on land with improved lead times guaranteed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prohibited Items Section -->
+    <section class="content-section">
+        <div class="container">
+            <span class="section-label">Restricted Access</span>
+            <div class="list-section-header">
+                <h2>Prohibited Items</h2>
+            </div>
+            <div class="items-grid">
+                <div class="category-group">
+                    <div class="category-title"><i class="fa-solid fa-play"></i> Explosives</div>
+                    <div class="category-description">
+                        Firearms - Small and Large firearms, sports guns, anesthesia injection guns, steel ball guns,
+                        tear gas guns, stun guns, Simulation weapons, toy guns, etc. <br>
+                        Ammunitions - Such as propellant, nitrocellulose, electric ignition head, etc. <br>
+                        Blasting Equipment - Small and Large firearms, sports guns, anesthesia injection guns, steel
+                        ball guns, tear gas guns, stun guns, Simulation weapons, toy guns, etc. <br>
+                        Fireworks and firecrackers - Fireworks, firecrackers, crackers, smashing cannons, paintballs,
+                        etc. <br>
+                        black powder, pyrotechnic powder, launch paper, fuse, etc. <br>
+                        Others - Such as propellant, nitrocellulose, electric ignition head, etc.
+                    </div>
+                </div>
+
+                <div class="category-group">
+                    <div class="category-title"><i class="fa-solid fa-play"></i> Gases</div>
+                    <div class="category-description">
+                        Flammable Gases - Acetylene, butane, propane, refrigerant gases, petroleum gas <br>
+                        Non Flammable, Non Toxic Gases - Compressed oxygen, carbon monoxide, fire extinguisher with
+                        compressed gas and liquefied gas, fertilizer ammoniating solution <br>
+                        Toxic Gases - Carbon monoxide, nitric oxide, chlorine gas, oil gas, mercury and cyanide
+                    </div>
+                </div>
+
+                <div class="category-group">
+                    <div class="category-title"><i class="fa-solid fa-play"></i> Flammable Liquids</div>
+                    <div class="category-description">
+                        Flammable Liquids - Gasoline, item that contains gasoline, diesel, kerosene, petroleum, acetone,
+                        paint and paint-related materials.
+                    </div>
+                </div>
+
+                <div class="category-group">
+                    <div class="category-title"><i class="fa-solid fa-play"></i> Flammable solid</div>
+                    <div class="category-description">
+                        Flammable Solids - Coal (Activated Carbon), matches (Phosphorus), sawdust, coconut shells,
+                        sulfur <br>
+                        Spontaneous combustion substances - Yellow phosphorus, white phosphorus, titanium powder <br>
+                        Flammable substances in contact with water - Alkali metals, potassium and lithium, sodium.
+                    </div>
+                </div>
+
+                <div class="category-group">
+                    <div class="category-title"><i class="fa-solid fa-play"></i> Toxic and infectious substances</div>
+                    <div class="category-description">
+                        Toxic And Infectious Substances - Mercury, bleach, battery acid, toilet bowl cleaner, pesticides
+                        etc. <br>
+                        Infectious Substances - Bacteria, fungi, viruses, parasitesm, specimen
+                    </div>
+                </div>
+
+                <div class="category-group">
+                    <div class="category-title"><i class="fa-solid fa-play"></i> Radioactive materials</div>
+                    <div class="category-description">
+                        Radioactive Materials (Radioactive Chemical Element) - Uranium, Radium, Alpha Radiation,
+                        Polonium, Cobalt etc
+                    </div>
+                </div>
+
+                <div class="category-group">
+                    <div class="category-title"><i class="fa-solid fa-play"></i> Corrosives</div>
+                    <div class="category-description">
+                        Corrosive Substances - Acids/acid solutions, Battery fluid, Fuel cell cartridges, Dyes, Fire
+                        extinguisher charges, Hydrochloric acid, Sulfuric acid, etc.
+                    </div>
+                </div>
+
+                <div class="category-group">
+                    <div class="category-title"><i class="fa-solid fa-play"></i> Illegal drugs in any form</div>
+                    <div class="category-description">
+                        Depressants - Morphine, Heroin, Codeine, Sedatives, Marijuana <br>
+                        Stimulants - Nicotine, Cocaine, Methamphetamine, Crack, Uppers, Marijuana <br>
+                        Hallucinogens - Marijuana, Mescaline, Psilocybin
+                    </div>
+                </div>
+
+                <div class="category-group">
+                    <div class="category-title"><i class="fa-solid fa-play"></i> Biomedical wastes, body organs, corpse
+                    </div>
+                    <div class="category-description">
+                        Biomedical wastes - Used syringes, bandages and cottons, test tubes, sampling vials, etc. <br>
+                        Body Organs - Organs (heart, liver, lungs, kidney, stomach, intestines, bladder, eyes, brains,
+                        skin), amputated body parts, blood <br>
+                        Corpse - Human remains, dead animals, urns
+                    </div>
+                </div>
+
+                <div class="category-group">
+                    <div class="category-title"><i class="fa-solid fa-play"></i> Live animals</div>
+                    <div class="category-description">
+                        Animals - Fish, Snake, Pigeon, Dogs, Cats or any categories of animals.
+                    </div>
+                </div>
+
+                <div class="category-group">
+                    <div class="category-title"><i class="fa-solid fa-play"></i> Liquor or alcoholic beverages</div>
+                    <div class="category-description">
+                        Liquor or Alcoholic Beverages - Gin, Whiskey, Beer, Ale, Brandy, Applejack, Rhum, Baijiu, Pijiu,
+                        Soju, Sake, Arak, Vodka, Cognac, Tequila, Mead, Okolehao, Wine <br>
+                        Philippine made alcoholic beverages - Basi, Lambanog, Tuba, Tapuy, Bignay, Strawberry wine,
+                        Calamansi Wine, Mango Rhum, Cacao Liquor, Coffee Liquor, Salted Caramel Wine.
+                    </div>
+                </div>
+
+                <div class="category-group">
+                    <div class="category-title"><i class="fa-solid fa-play"></i> Negative propagandas</div>
+                    <div class="category-description">
+                        Negative Propagandas - Building a mental or false image, Creating a false dilemma, Name Calling,
+                        misinformation, inflammatory language, slanderous and libelous language.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restricted Items Section -->
+    <section class="content-section">
+        <div class="container">
+            <span class="section-label">Safety Guidelines</span>
+            <div class="list-section-header">
+                <h2>Restricted Items</h2>
+            </div>
+            <div class="items-grid">
+                <div class="category-group">
+                    <div class="category-title"><i class="fa-solid fa-play"></i> Tobacco and cigarettes</div>
+                    <div class="category-description">
+                        Lighters - Flint-free, Airless, Electric lighters, Plasma Lighter, E-cigarettes.
+                    </div>
+                </div>
+
+                <div class="category-group">
+                    <div class="category-title"><i class="fa-solid fa-play"></i> Coercion items</div>
+                    <div class="category-description">
+                        Controlled Knives - Such as daggers, three-sided scrapers, hunting knives, waist knives, martial
+                        arts knives, switch knives with self-locking device (jump knives), other similar single-edged,
+                        double-edged, three-edged sharp knives, hidden knives, etc. <br>
+                        Others - such as crossbows, spears, axes, tear gas, electric shocks, electric batons, electric
+                        batons, handcuffs, etc.
+                    </div>
+                </div>
+
+                <div class="category-group">
+                    <div class="category-title"><i class="fa-solid fa-play"></i> Perishable goods</div>
+                    <div class="category-description">
+                        Perishable Goods - such as meat and meat by-products, fish and seafood, poultry products, dairy
+                        products, fruit and vegetables, flowers, pharmaceutical products, and chemicals
+                    </div>
+                </div>
+
+                <div class="category-group">
+                    <div class="category-title"><i class="fa-solid fa-play"></i> Environmental items</div>
+                    <div class="category-description">
+                        Succulent Plants - Aeonium, Aloe, Crassula, Echeveria, Graptopetalum, Haworthia, Lithops, and
+                        Pleospilos Nelii
+                    </div>
+                </div>
+
+                <div class="category-group">
+                    <div class="category-title"><i class="fa-solid fa-play"></i> Granular products</div>
+                    <div class="category-description">
+                        Granular Products - Rice, Coffee Granules, Granular Fertilizers, Dog or Cat Food, Corn Flake
+                    </div>
+                </div>
+
+                <div class="category-group">
+                    <div class="category-title"><i class="fa-solid fa-play"></i> Repacked goods</div>
+                    <div class="category-description">
+                        Repacked Goods - Chocolates, Candies, Gummy Bears, Choco Powder, Coffees, Sugars
+                    </div>
+                </div>
+
+                <div class="category-group">
+                    <div class="category-title"><i class="fa-solid fa-play"></i> Currency</div>
+                    <div class="category-description">
+                        Currency - Bills, coins, cheques
+                    </div>
+                </div>
+
+                <div class="category-group">
+                    <div class="category-title"><i class="fa-solid fa-play"></i> Oxidizers and organic peroxides</div>
+                    <div class="category-description">
+                        Oxidising Substances - Ammonium perchlorate
+                    </div>
+                </div>
+
+                <div class="category-group">
+                    <div class="category-title"><i class="fa-solid fa-play"></i> Battery operated products</div>
+                    <div class="category-description">
+                        Battery Operated Products - Powerbank, Solar Generator
+                    </div>
                 </div>
             </div>
         </div>
@@ -124,7 +531,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="#" class="logo footer-logo-text">
+                    <a href="index.html" class="logo footer-logo-text">
                         <div class="logo-text">
                             <span class="logo-drop">Drop</span>
                             <div class="logo-it-express">
