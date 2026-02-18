@@ -126,55 +126,166 @@
                 <!-- Form Content -->
                 <div class="form-content">
                     <form id="shipment-form">
-                        <div class="form-section-title">
-                            SENDER INFORMATION <span>The * marks are required</span>
-                        </div>
+                        <!-- Step 1: Sender Information -->
+                        <div class="form-step active" id="step-1">
+                            <div class="form-section-title">
+                                SENDER INFORMATION <span>The * marks are required</span>
+                            </div>
 
-                        <div class="form-group">
-                            <label><i class="fa-solid fa-asterisk"></i> Name</label>
-                            <input type="text" class="form-control" placeholder="Please fill in the Name" required>
-                        </div>
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-asterisk"></i> Name</label>
+                                <input type="text" class="form-control" name="sender-name"
+                                    placeholder="Please fill in the Name" required>
+                            </div>
 
-                        <div class="form-group">
-                            <label><i class="fa-solid fa-asterisk"></i> Phone</label>
-                            <div class="phone-input-group">
-                                <span class="phone-prefix">+63</span>
-                                <input type="tel" class="form-control" placeholder="Please fill in the Phone Number"
-                                    required>
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-asterisk"></i> Phone</label>
+                                <div class="phone-input-group">
+                                    <span class="phone-prefix" id="sender-prefix">+63</span>
+                                    <input type="tel" class="form-control" name="sender-phone"
+                                        placeholder="Please fill in the Phone Number" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-asterisk"></i> Province/city/barangay</label>
+                                <div class="form-row">
+                                    <div class="select-wrapper">
+                                        <select class="form-control" id="sender-province" required>
+                                            <option value="" disabled selected>Province/Country</option>
+                                        </select>
+                                    </div>
+                                    <div class="select-wrapper">
+                                        <select class="form-control" id="sender-city" required>
+                                            <option value="" disabled selected>City</option>
+                                        </select>
+                                    </div>
+                                    <div class="select-wrapper">
+                                        <select class="form-control" id="sender-area" required>
+                                            <option value="" disabled selected>Area</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-asterisk"></i> Address</label>
+                                <input type="text" class="form-control" name="sender-address"
+                                    placeholder="Please enter the detailed address" required>
+                            </div>
+
+                            <div class="btn-next-container">
+                                <button type="button" class="btn-next" onclick="goToStep(2)">
+                                    Next step <i class="fa-solid fa-chevron-right"></i>
+                                </button>
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label><i class="fa-solid fa-asterisk"></i> Province/city/barangay</label>
-                            <div class="form-row">
+                        <!-- Step 2: Recipient Information -->
+                        <div class="form-step" id="step-2">
+                            <div class="form-section-title">
+                                RECIPIENT INFORMATION <span>The * marks are required</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-asterisk"></i> Country/Region</label>
                                 <div class="select-wrapper">
-                                    <select class="form-control" id="select-province" required>
-                                        <option value="" disabled selected>Province/Country</option>
-                                    </select>
-                                </div>
-                                <div class="select-wrapper">
-                                    <select class="form-control" id="select-city" required>
-                                        <option value="" disabled selected>City</option>
-                                    </select>
-                                </div>
-                                <div class="select-wrapper">
-                                    <select class="form-control" id="select-area" required>
-                                        <option value="" disabled selected>Area</option>
+                                    <select class="form-control" id="recipient-country" required>
+                                        <option value="" disabled selected>Select Country/Region</option>
+                                        <option value="Philippines">Philippines</option>
+                                        <option value="Japan">Japan</option>
+                                        <option value="Thailand">Thailand</option>
+                                        <option value="Hong Kong">Hong Kong</option>
+                                        <option value="China">China</option>
+                                        <option value="Singapore">Singapore</option>
+                                        <option value="Malaysia">Malaysia</option>
+                                        <option value="Indonesia">Indonesia</option>
                                     </select>
                                 </div>
                             </div>
+
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-asterisk"></i> Name</label>
+                                <input type="text" class="form-control" name="recipient-name"
+                                    placeholder="Please fill in the Name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-asterisk"></i> Phone</label>
+                                <div class="phone-input-group">
+                                    <span class="phone-prefix" id="recipient-prefix">+</span>
+                                    <input type="tel" class="form-control" name="recipient-phone"
+                                        placeholder="Please fill in the Phone Number" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group" id="recipient-location-group">
+                                <label><i class="fa-solid fa-asterisk"></i> Province/city/barangay</label>
+                                <div class="form-row">
+                                    <div class="select-wrapper">
+                                        <select class="form-control" id="recipient-province" required>
+                                            <option value="" disabled selected>Province</option>
+                                        </select>
+                                    </div>
+                                    <div class="select-wrapper">
+                                        <select class="form-control" id="recipient-city" required>
+                                            <option value="" disabled selected>City</option>
+                                        </select>
+                                    </div>
+                                    <div class="select-wrapper">
+                                        <select class="form-control" id="recipient-area" required>
+                                            <option value="" disabled selected>Area</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-asterisk"></i> RecipientAddress</label>
+                                <input type="text" class="form-control" name="recipient-address"
+                                    placeholder="Please enter the detailed address" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-asterisk"></i> Postcode</label>
+                                <input type="text" class="form-control" name="recipient-postcode"
+                                    placeholder="Please enter the postcode" required>
+                            </div>
+
+                            <div class="btn-next-container">
+                                <button type="button" class="btn-prev" onclick="goToStep(1)">
+                                    <i class="fa-solid fa-chevron-left"></i> Previous
+                                </button>
+                                <button type="button" class="btn-next" onclick="goToStep(3)">
+                                    Next step <i class="fa-solid fa-chevron-right"></i>
+                                </button>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label><i class="fa-solid fa-asterisk"></i> Address</label>
-                            <input type="text" class="form-control" placeholder="Please enter the detailed address"
-                                required>
+                        <!-- Placeholder for Step 3 & 4 -->
+                        <div class="form-step" id="step-3">
+                            <div class="form-section-title">PACKAGE INFORMATION</div>
+                            <p>Package details form coming soon...</p>
+                            <div class="btn-next-container">
+                                <button type="button" class="btn-prev" onclick="goToStep(2)">
+                                    <i class="fa-solid fa-chevron-left"></i> Previous
+                                </button>
+                                <button type="button" class="btn-next" onclick="goToStep(4)">
+                                    Finish <i class="fa-solid fa-check"></i>
+                                </button>
+                            </div>
                         </div>
 
-                        <div class="btn-next-container">
-                            <button type="submit" class="btn-next">
-                                Next step <i class="fa-solid fa-chevron-right"></i>
-                            </button>
+                        <div class="form-step" id="step-4">
+                            <div class="form-section-title">ORDER COMPLETE</div>
+                            <div style="text-align: center; padding: 40px;">
+                                <i class="fa-solid fa-circle-check"
+                                    style="font-size: 4rem; color: #2ecc71; margin-bottom: 20px;"></i>
+                                <h3>Thank You!</h3>
+                                <p>Your shipment has been successfully scheduled.</p>
+                                <a href="index.html" class="btn-primary-natours" style="margin-top: 30px;">Return
+                                    Home</a>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -183,122 +294,263 @@
     </section>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const locationData = {
-                domestic: {
-                    "Manila": {
-                        "Manila City": ["Binondo", "Ermita", "Intramuros", "Malate"],
-                        "Quezon City": ["Diliman", "Cubao", "Libis", "Novaliches"],
-                        "Makati City": ["Bel-Air", "Poblacion", "San Lorenzo", "Urdaneta"]
-                    },
-                    "Cebu": {
-                        "Cebu City": ["Lahug", "Mabolo", "Pasil", "Tisa"],
-                        "Lapu-Lapu City": ["Basak", "Marigondon", "Pajo", "Punta Engañoo"]
-                    },
-                    "Davao": {
-                        "Davao City": ["Agdao", "Buhangin", "Talomo", "Toril"]
-                    }
+        const locationData = {
+            "Philippines": {
+                "Metro Manila": {
+                    "Manila City": ["Binondo", "Ermita", "Intramuros", "Malate", "Quiapo", "Sampaloc"],
+                    "Quezon City": ["Diliman", "Cubao", "Libis", "Novaliches", "Katipunan"],
+                    "Makati City": ["Bel-Air", "Poblacion", "San Lorenzo", "Urdaneta", "Guadalupe"],
+                    "Taguig City": ["BGC", "Fort Bonifacio", "Western Bicutan"],
+                    "Pasig City": ["Kapitolyo", "Ortigas", "Ugong"]
                 },
-                international: {
-                    "Japan": {
-                        "Tokyo": ["Chiyoda", "Shibuya", "Shinjuku", "Minato"],
-                        "Osaka": ["Kita", "Chuo", "Naniwa", "Umeda"]
-                    },
-                    "Thailand": {
-                        "Bangkok": ["Siam", "Sukhumvit", "Silom", "Sathorn"],
-                        "Chiang Mai": ["Old City", "Nimman", "Riverside"]
-                    },
-                    "Hong Kong": {
-                        "Hong Kong Island": ["Central", "Wan Chai", "Causeway Bay"],
-                        "Kowloon": ["Tsim Sha Tsui", "Mong Kok", "Jordan"]
-                    },
-                    "China": {
-                        "Beijing": ["Dongcheng", "Xicheng", "Chaoyang"],
-                        "Shanghai": ["Pudong", "Huangpu", "Jing'an"]
-                    },
-                    "Singapore": {
-                        "Singapore City": ["Orchard", "Marina Bay", "Jurong", "Changi"]
-                    },
-                    "Malaysia": {
-                        "Kuala Lumpur": ["Bukit Bintang", "KLCC", "Bangsar"],
-                        "Penang": ["George Town", "Bayan Lepas", "Batu Ferringhi"]
-                    },
-                    "Indonesia": {
-                        "Jakarta": ["Menteng", "Kemang", "Sudirman"],
-                        "Bali": ["Denpasar", "Kuta", "Seminyak", "Ubud"]
-                    }
+                "Cebu": {
+                    "Cebu City": ["Lahug", "Mabolo", "Pasil", "Tisa", "Banilad"],
+                    "Lapu-Lapu City": ["Basak", "Marigondon", "Pajo", "Punta Engaño"],
+                    "Mandaue City": ["Bakilid", "Banilad", "Subangdaku"]
+                },
+                "Davao": {
+                    "Davao City": ["Agdao", "Buhangin", "Talomo", "Toril", "Bunawan"]
+                },
+                "Batangas": {
+                    "Batangas City": ["Alangilan", "Bolbok", "Kumintang Ibaba"],
+                    "Lipa City": ["Marawoy", "Sabang", "Tambô"]
+                },
+                "Pampanga": {
+                    "Angeles City": ["Balibago", "Pandan", "Sto. Domingo"],
+                    "San Fernando City": ["Dolores", "Sindalan", "St. Jude"]
                 }
-            };
+            },
+            "Japan": {
+                "Tokyo": {
+                    "Shinjuku": ["Nishi-Shinjuku", "Kabukicho", "Okubo"],
+                    "Shibuya": ["Udagawacho", "Dogenzaka", "Ebisu"],
+                    "Minato": ["Roppongi", "Akasaka", "Minami-Aoyama"]
+                },
+                "Osaka": {
+                    "Kita": ["Umeda", "Nakajima", "Tenjinbashi"],
+                    "Chuo": ["Namba", "Shinsaibashi", "Dotombori"]
+                }
+            },
+            "Thailand": {
+                "Bangkok": {
+                    "Pathum Wan": ["Siam", "Lumpini"],
+                    "Watana": ["Sukhumvit", "Thong Lo"],
+                    "Bang Rak": ["Silom", "Sathorn"]
+                }
+            },
+            "Hong Kong": {
+                "Hong Kong Island": {
+                    "Central & Western": ["Central", "Sheung Wan"],
+                    "Wan Chai": ["Causeway Bay", "Wan Chai"]
+                },
+                "Kowloon": {
+                    "Yau Tsim Mong": ["Tsim Sha Tsui", "Mong Kok"]
+                }
+            },
+            "China": {
+                "Beijing": {
+                    "Dongcheng": ["Wangfujing", "Dongdan"],
+                    "Chaoyang": ["Sanlitun", "CBD"]
+                },
+                "Shanghai": {
+                    "Pudong": ["Lujiazui", "Waigaoqiao"],
+                    "Huangpu": ["The Bund", "People's Square"]
+                }
+            },
+            "Singapore": {
+                "Singapore": {
+                    "Central Region": ["Orchard", "Marina Bay", "River Valley"],
+                    "East Region": ["Changi", "Tampines"],
+                    "West Region": ["Jurong", "Clementi"]
+                }
+            },
+            "Malaysia": {
+                "Selangor": {
+                    "Kuala Lumpur": ["Bukit Bintang", "KLCC", "Bangsar"],
+                    "Petaling Jaya": ["SS2", "Damansara Utama"]
+                },
+                "Penang": {
+                    "George Town": ["Tanjung Bungah", "Bayan Lepas"]
+                }
+            },
+            "Indonesia": {
+                "Jakarta": {
+                    "South Jakarta": ["Senopati", "Kemang"],
+                    "Central Jakarta": ["Menteng", "Sudirman"]
+                },
+                "Bali": {
+                    "Badung": ["Kuta", "Seminyak", "Ubud"]
+                }
+            }
+        };
 
+        function goToStep(stepNumber) {
+            // Update active step in UI
+            document.querySelectorAll('.form-step').forEach(step => step.classList.remove('active'));
+            document.getElementById(`step-${stepNumber}`).classList.add('active');
+
+            // Update stepper visual
+            const steps = document.querySelectorAll('.step-item');
+            steps.forEach((s, index) => {
+                if (index < stepNumber) {
+                    s.classList.add('active');
+                } else {
+                    s.classList.remove('active');
+                }
+            });
+
+            // Scroll to top of form
+            const formContainer = document.querySelector('.booking-form-container');
+            window.scrollTo({
+                top: formContainer.offsetTop - 100,
+                behavior: 'smooth'
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
             const tabDomestic = document.getElementById('tab-domestic');
             const tabInternational = document.getElementById('tab-international');
-            const selectProvince = document.getElementById('select-province');
-            const selectCity = document.getElementById('select-city');
-            const selectArea = document.getElementById('select-area');
-            const phonePrefix = document.querySelector('.phone-prefix');
 
-            let currentMode = 'domestic';
+            // Sender Fields
+            const senderProvince = document.getElementById('sender-province');
+            const senderCity = document.getElementById('sender-city');
+            const senderArea = document.getElementById('sender-area');
+            const senderPrefix = document.getElementById('sender-prefix');
 
-            function updateProvinces() {
-                const data = locationData[currentMode];
-                selectProvince.innerHTML = `<option value="" disabled selected>${currentMode === 'domestic' ? 'Province' : 'Country'}</option>`;
-                selectCity.innerHTML = '<option value="" disabled selected>City</option>';
-                selectArea.innerHTML = '<option value="" disabled selected>Area</option>';
+            // Recipient Fields
+            const recipientCountry = document.getElementById('recipient-country');
+            const recipientProvince = document.getElementById('recipient-province');
+            const recipientCity = document.getElementById('recipient-city');
+            const recipientArea = document.getElementById('recipient-area');
+            const recipientPrefix = document.getElementById('recipient-prefix');
 
-                Object.keys(data).forEach(prov => {
-                    const option = document.createElement('option');
-                    option.value = prov;
-                    option.textContent = prov;
-                    selectProvince.appendChild(option);
+            let currentShipmentMode = 'domestic';
+
+            function populateProvinces(selectElement, country) {
+                const data = locationData[country];
+                selectElement.innerHTML = '<option value="" disabled selected>Province</option>';
+                if (data) {
+                    Object.keys(data).forEach(prov => {
+                        const option = document.createElement('option');
+                        option.value = prov;
+                        option.textContent = prov;
+                        selectElement.appendChild(option);
+                    });
+                }
+            }
+
+            function handleProvinceChange(provinceSelect, citySelect, areaSelect, country) {
+                provinceSelect.addEventListener('change', () => {
+                    const province = provinceSelect.value;
+                    const cities = locationData[country][province];
+                    citySelect.innerHTML = '<option value="" disabled selected>City</option>';
+                    areaSelect.innerHTML = '<option value="" disabled selected>Area</option>';
+                    if (cities) {
+                        Object.keys(cities).forEach(city => {
+                            const option = document.createElement('option');
+                            option.value = city;
+                            option.textContent = city;
+                            citySelect.appendChild(option);
+                        });
+                    }
                 });
             }
 
+            function handleCityChange(citySelect, areaSelect, provinceSelect, country) {
+                citySelect.addEventListener('change', () => {
+                    const province = provinceSelect.value;
+                    const city = citySelect.value;
+                    const areas = locationData[country][province][city];
+                    areaSelect.innerHTML = '<option value="" disabled selected>Area</option>';
+                    if (areas) {
+                        areas.forEach(area => {
+                            const option = document.createElement('option');
+                            option.value = area;
+                            option.textContent = area;
+                            areaSelect.appendChild(option);
+                        });
+                    }
+                });
+            }
+
+            // Initialization for Sender (Step 1)
+            populateProvinces(senderProvince, "Philippines");
+            handleProvinceChange(senderProvince, senderCity, senderArea, "Philippines");
+            handleCityChange(senderCity, senderArea, senderProvince, "Philippines");
+
+            // Tab Switching Logic
             tabDomestic.addEventListener('click', () => {
-                currentMode = 'domestic';
+                currentShipmentMode = 'domestic';
                 tabDomestic.classList.add('active');
                 tabInternational.classList.remove('active');
-                phonePrefix.textContent = '+63';
-                updateProvinces();
+                senderPrefix.textContent = '+63';
+                populateProvinces(senderProvince, "Philippines");
             });
 
             tabInternational.addEventListener('click', () => {
-                currentMode = 'international';
+                currentShipmentMode = 'international';
                 tabInternational.classList.add('active');
                 tabDomestic.classList.remove('active');
-                phonePrefix.textContent = '+';
-                updateProvinces();
+                senderPrefix.textContent = '+';
+                // Reset/Change sender options if needed for global sender
             });
 
-            selectProvince.addEventListener('change', () => {
-                const prov = selectProvince.value;
-                const cities = locationData[currentMode][prov];
-                selectCity.innerHTML = '<option value="" disabled selected>City</option>';
-                selectArea.innerHTML = '<option value="" disabled selected>Area</option>';
+            // Recipient Logic (Step 2)
+            recipientCountry.addEventListener('change', () => {
+                const country = recipientCountry.value;
 
-                Object.keys(cities).forEach(city => {
-                    const option = document.createElement('option');
-                    option.value = city;
-                    option.textContent = city;
-                    selectCity.appendChild(option);
-                });
+                // Update Prefix based on country
+                const prefixes = {
+                    "Philippines": "+63",
+                    "Japan": "+81",
+                    "Thailand": "+66",
+                    "Hong Kong": "+852",
+                    "China": "+86",
+                    "Singapore": "+65",
+                    "Malaysia": "+60",
+                    "Indonesia": "+62"
+                };
+                recipientPrefix.textContent = prefixes[country] || "+";
+
+                // Populate Recipient Locations
+                populateProvinces(recipientProvince, country);
             });
 
-            selectCity.addEventListener('change', () => {
-                const prov = selectProvince.value;
-                const city = selectCity.value;
-                const areas = locationData[currentMode][prov][city];
-                selectArea.innerHTML = '<option value="" disabled selected>Area</option>';
+            handleProvinceChange(recipientProvince, recipientCity, recipientArea, "");
+            handleCityChange(recipientCity, recipientArea, recipientProvince, "");
 
-                areas.forEach(area => {
-                    const option = document.createElement('option');
-                    option.value = area;
-                    option.textContent = area;
-                    selectArea.appendChild(option);
-                });
+            // Override handleProvinceChange to dynamically get country
+            recipientProvince.addEventListener('change', () => {
+                const country = recipientCountry.value;
+                const province = recipientProvince.value;
+                const cities = locationData[country][province];
+                recipientCity.innerHTML = '<option value="" disabled selected>City</option>';
+                recipientArea.innerHTML = '<option value="" disabled selected>Area</option>';
+                if (cities) {
+                    Object.keys(cities).forEach(city => {
+                        const option = document.createElement('option');
+                        option.value = city;
+                        option.textContent = city;
+                        recipientCity.appendChild(option);
+                    });
+                }
             });
 
-            // Initialize
-            updateProvinces();
+            recipientCity.addEventListener('change', () => {
+                const country = recipientCountry.value;
+                const province = recipientProvince.value;
+                const city = recipientCity.value;
+                const areas = locationData[country][province][city];
+                recipientArea.innerHTML = '<option value="" disabled selected>Area</option>';
+                if (areas) {
+                    areas.forEach(area => {
+                        const option = document.createElement('option');
+                        option.value = area;
+                        option.textContent = area;
+                        recipientArea.appendChild(option);
+                    });
+                }
+            });
         });
     </script>
 

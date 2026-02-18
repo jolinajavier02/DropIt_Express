@@ -1510,13 +1510,14 @@ footer {
         border-radius: 20px !important;
     }
 }
+
 /* Booking Form Styles */
 .booking-form-container {
     max-width: 1000px;
     margin: 0 auto;
     background: white;
     border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
@@ -1682,50 +1683,68 @@ footer {
 
 .btn-next-container {
     margin-top: 40px;
-    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
 }
 
-.btn-next {
-    background: var(--primary-red);
-    color: white;
-    border: none;
-    padding: 18px 60px;
+.btn-prev {
+    background: white;
+    color: #666;
+    border: 1px solid #ddd;
+    padding: 15px 40px;
     border-radius: 50px;
     font-size: 1.1rem;
-    font-weight: 800;
+    font-weight: 600;
     cursor: pointer;
-    float: right;
     display: flex;
     align-items: center;
     gap: 12px;
     transition: 0.3s;
-    box-shadow: 0 10px 20px rgba(230, 0, 0, 0.1);
 }
 
-.btn-next:hover {
-    background: var(--dark-red);
-    box-shadow: 0 15px 30px rgba(230, 0, 0, 0.2);
-    transform: translateY(-3px);
+.btn-prev:hover {
+    background: #f9f9f9;
+    border-color: #ccc;
+    color: #333;
+}
+
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
 }
 
 @media (max-width: 768px) {
+    .btn-next-container {
+        flex-direction: column-reverse;
+    }
+
+    .btn-prev,
+    .btn-next {
+        width: 100%;
+        justify-content: center;
+    }
+
     .form-content {
         padding: 40px 30px;
     }
-    
+
     .form-row {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
+
     .progress-stepper {
         padding: 30px 10px;
     }
-    
+
     .step-number {
         font-size: 1.8rem;
     }
-    
+
     .step-label {
         font-size: 0.7rem;
     }
