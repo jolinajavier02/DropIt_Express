@@ -85,39 +85,222 @@
     </nav>
 
     <!-- Page Hero -->
-    <header class="hero" style="background-image: url('images/drop-off-hero.png');">
+    <header class="hero" style="background-image: url('images/dropit-express-hero.png'); height: 400px;">
         <div class="hero-overlay-natours"></div>
         <div class="container hero-content-centered">
-            <h1>Drop-Off Your Package</h1>
-            <p>Ready to ship? Just drop it off at any of our branches nationwide.</p>
+            <h1>Ship Your Package</h1>
+            <p>Initiate your shipment in just a few simple steps.</p>
         </div>
     </header>
 
-    <!-- Content Section -->
-    <section class="service-detail" style="padding: 100px 0; background-color: var(--white);">
-        <div class="container" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
-            <div style="flex: 1; min-width: 300px;">
-                <h2 class="section-title-natours">Hassle-Free Drop-Off</h2>
-                <h3 class="section-subtitle-natours" style="color: var(--primary-red); letter-spacing: 2px;">SIMPLE &
-                    SECURE</h3>
-                <p style="margin-bottom: 30px; font-size: 1.15rem; color: var(--text-light); line-height: 1.8;">
-                    Dropping off your package has never been easier. With over 1,000 branches strategically located
-                    across the country, you're never far from a DropIt Express point. Our friendly staff will assist you
-                    with weighing, measuring, and confirming your shipment details on the spot.
-                </p>
-                <div class="btn-group-natours">
-                    <a href="#" class="btn-primary-natours">Find a Branch</a>
-                    <a href="#" class="btn-outline-natours">View Rates</a>
+    <!-- Shipment Form Section -->
+    <section class="content-section" style="background-color: #fcfcfc;">
+        <div class="container">
+            <div class="booking-form-container">
+                <!-- Shipment Tabs -->
+                <div class="shipment-tabs">
+                    <div class="shipment-tab active" id="tab-domestic">Domestic Shipment</div>
+                    <div class="shipment-tab" id="tab-international">International Shipment</div>
                 </div>
-            </div>
-            <div style="flex: 1; min-width: 300px;">
-                <div class="video-container"
-                    style="box-shadow: 0 30px 60px rgba(0,0,0,0.15); border-radius: 15px; overflow: hidden;">
-                    <img src="images/drop-off-hero.png" alt="Drop Off" style="width: 100%; display: block;">
+
+                <!-- Progress Stepper -->
+                <div class="progress-stepper">
+                    <div class="step-item active">
+                        <div class="step-number">01</div>
+                        <div class="step-label">Sender Information</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">02</div>
+                        <div class="step-label">Recipient Information</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">03</div>
+                        <div class="step-label">Package Information</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">04</div>
+                        <div class="step-label">Order Complete</div>
+                    </div>
+                </div>
+
+                <!-- Form Content -->
+                <div class="form-content">
+                    <form id="shipment-form">
+                        <div class="form-section-title">
+                            SENDER INFORMATION <span>The * marks are required</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-asterisk"></i> Name</label>
+                            <input type="text" class="form-control" placeholder="Please fill in the Name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-asterisk"></i> Phone</label>
+                            <div class="phone-input-group">
+                                <span class="phone-prefix">+63</span>
+                                <input type="tel" class="form-control" placeholder="Please fill in the Phone Number"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-asterisk"></i> Province/city/barangay</label>
+                            <div class="form-row">
+                                <div class="select-wrapper">
+                                    <select class="form-control" id="select-province" required>
+                                        <option value="" disabled selected>Province/Country</option>
+                                    </select>
+                                </div>
+                                <div class="select-wrapper">
+                                    <select class="form-control" id="select-city" required>
+                                        <option value="" disabled selected>City</option>
+                                    </select>
+                                </div>
+                                <div class="select-wrapper">
+                                    <select class="form-control" id="select-area" required>
+                                        <option value="" disabled selected>Area</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-asterisk"></i> Address</label>
+                            <input type="text" class="form-control" placeholder="Please enter the detailed address"
+                                required>
+                        </div>
+
+                        <div class="btn-next-container">
+                            <button type="submit" class="btn-next">
+                                Next step <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const locationData = {
+                domestic: {
+                    "Manila": {
+                        "Manila City": ["Binondo", "Ermita", "Intramuros", "Malate"],
+                        "Quezon City": ["Diliman", "Cubao", "Libis", "Novaliches"],
+                        "Makati City": ["Bel-Air", "Poblacion", "San Lorenzo", "Urdaneta"]
+                    },
+                    "Cebu": {
+                        "Cebu City": ["Lahug", "Mabolo", "Pasil", "Tisa"],
+                        "Lapu-Lapu City": ["Basak", "Marigondon", "Pajo", "Punta Engañoo"]
+                    },
+                    "Davao": {
+                        "Davao City": ["Agdao", "Buhangin", "Talomo", "Toril"]
+                    }
+                },
+                international: {
+                    "Japan": {
+                        "Tokyo": ["Chiyoda", "Shibuya", "Shinjuku", "Minato"],
+                        "Osaka": ["Kita", "Chuo", "Naniwa", "Umeda"]
+                    },
+                    "Thailand": {
+                        "Bangkok": ["Siam", "Sukhumvit", "Silom", "Sathorn"],
+                        "Chiang Mai": ["Old City", "Nimman", "Riverside"]
+                    },
+                    "Hong Kong": {
+                        "Hong Kong Island": ["Central", "Wan Chai", "Causeway Bay"],
+                        "Kowloon": ["Tsim Sha Tsui", "Mong Kok", "Jordan"]
+                    },
+                    "China": {
+                        "Beijing": ["Dongcheng", "Xicheng", "Chaoyang"],
+                        "Shanghai": ["Pudong", "Huangpu", "Jing'an"]
+                    },
+                    "Singapore": {
+                        "Singapore City": ["Orchard", "Marina Bay", "Jurong", "Changi"]
+                    },
+                    "Malaysia": {
+                        "Kuala Lumpur": ["Bukit Bintang", "KLCC", "Bangsar"],
+                        "Penang": ["George Town", "Bayan Lepas", "Batu Ferringhi"]
+                    },
+                    "Indonesia": {
+                        "Jakarta": ["Menteng", "Kemang", "Sudirman"],
+                        "Bali": ["Denpasar", "Kuta", "Seminyak", "Ubud"]
+                    }
+                }
+            };
+
+            const tabDomestic = document.getElementById('tab-domestic');
+            const tabInternational = document.getElementById('tab-international');
+            const selectProvince = document.getElementById('select-province');
+            const selectCity = document.getElementById('select-city');
+            const selectArea = document.getElementById('select-area');
+            const phonePrefix = document.querySelector('.phone-prefix');
+
+            let currentMode = 'domestic';
+
+            function updateProvinces() {
+                const data = locationData[currentMode];
+                selectProvince.innerHTML = `<option value="" disabled selected>${currentMode === 'domestic' ? 'Province' : 'Country'}</option>`;
+                selectCity.innerHTML = '<option value="" disabled selected>City</option>';
+                selectArea.innerHTML = '<option value="" disabled selected>Area</option>';
+
+                Object.keys(data).forEach(prov => {
+                    const option = document.createElement('option');
+                    option.value = prov;
+                    option.textContent = prov;
+                    selectProvince.appendChild(option);
+                });
+            }
+
+            tabDomestic.addEventListener('click', () => {
+                currentMode = 'domestic';
+                tabDomestic.classList.add('active');
+                tabInternational.classList.remove('active');
+                phonePrefix.textContent = '+63';
+                updateProvinces();
+            });
+
+            tabInternational.addEventListener('click', () => {
+                currentMode = 'international';
+                tabInternational.classList.add('active');
+                tabDomestic.classList.remove('active');
+                phonePrefix.textContent = '+';
+                updateProvinces();
+            });
+
+            selectProvince.addEventListener('change', () => {
+                const prov = selectProvince.value;
+                const cities = locationData[currentMode][prov];
+                selectCity.innerHTML = '<option value="" disabled selected>City</option>';
+                selectArea.innerHTML = '<option value="" disabled selected>Area</option>';
+
+                Object.keys(cities).forEach(city => {
+                    const option = document.createElement('option');
+                    option.value = city;
+                    option.textContent = city;
+                    selectCity.appendChild(option);
+                });
+            });
+
+            selectCity.addEventListener('change', () => {
+                const prov = selectProvince.value;
+                const city = selectCity.value;
+                const areas = locationData[currentMode][prov][city];
+                selectArea.innerHTML = '<option value="" disabled selected>Area</option>';
+
+                areas.forEach(area => {
+                    const option = document.createElement('option');
+                    option.value = area;
+                    option.textContent = area;
+                    selectArea.appendChild(option);
+                });
+            });
+
+            // Initialize
+            updateProvinces();
+        });
+    </script>
 
     <!-- Footer -->
     <footer>
