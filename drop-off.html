@@ -482,23 +482,48 @@
                         </div>
 
                         <div class="form-step" id="step-4">
-                            <div class="form-section-title">ORDER COMPLETE</div>
-                            <div style="text-align: center; padding: 40px;">
-                                <i class="fa-solid fa-circle-check"
-                                    style="font-size: 4rem; color: #2ecc71; margin-bottom: 20px;"></i>
-                                <h3>Thank You!</h3>
-                                <p>Your shipment has been successfully scheduled.</p>
-                                <div class="order-summary-card"
-                                    style="background: #f9f9f9; padding: 20px; border-radius: 10px; margin: 20px 0;">
-                                    <p>Total Amount Paid: <strong
-                                            style="color: var(--primary-red); font-size: 1.5rem;">₱<span
-                                                id="final-price-display">0</span></strong></p>
-                                    <p>Tracking Number: <strong>DIX-
-                                            <?php echo rand(1000000, 9999999); ?>782934
-                                        </strong></p>
+                            <div class="form-section-title" style="justify-content: center;">ORDER SUCCESSFUL</div>
+                            <div style="text-align: center; padding: 20px 40px 40px;">
+                                <div class="success-icon-container" style="margin-bottom: 30px;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="font-size: 6rem; color: #2ecc71; text-shadow: 0 10px 20px rgba(46, 204, 113, 0.2);"></i>
                                 </div>
-                                <a href="index.html" class="btn-primary-natours" style="margin-top: 30px;">Return
-                                    Home</a>
+                                <h2 style="font-size: 2rem; font-weight: 800; color: #333; margin-bottom: 10px;">
+                                    Shipment Booked!</h2>
+                                <p style="color: #666; font-size: 1.1rem; margin-bottom: 30px;">Your package has been
+                                    successfully scheduled for drop-off.</p>
+
+                                <div class="order-summary-card"
+                                    style="background: #fdfdfd; padding: 30px; border-radius: 20px; border: 1px solid #eee; margin: 30px 0; text-align: left;">
+                                    <div
+                                        style="display: flex; justify-content: space-between; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px dashed #eee;">
+                                        <span style="color: #999; font-weight: 600;">Tracking Number</span>
+                                        <strong
+                                            style="color: #333; font-family: monospace; font-size: 1.1rem;">DIX-7829345520</strong>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                                        <span style="color: #999; font-weight: 600;">Total Amount Paid</span>
+                                        <strong style="color: var(--primary-red); font-size: 1.4rem;">₱<span
+                                                id="final-price-display">0</span></strong>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <span style="color: #999; font-weight: 600;">Payment Status</span>
+                                        <span
+                                            style="color: #2ecc71; font-weight: 800; text-transform: uppercase; font-size: 0.9rem; background: rgba(46, 204, 113, 0.1); padding: 4px 12px; border-radius: 50px;">Paid</span>
+                                    </div>
+                                </div>
+
+                                <div class="success-actions"
+                                    style="display: flex; gap: 20px; justify-content: center; margin-top: 40px;">
+                                    <a href="index.html" class="btn-prev"
+                                        style="text-decoration: none; padding: 18px 40px;">
+                                        <i class="fa-solid fa-house"></i> Done
+                                    </a>
+                                    <a href="my-shipments.html" class="btn-next"
+                                        style="text-decoration: none; padding: 18px 40px;">
+                                        View Details <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </form>
