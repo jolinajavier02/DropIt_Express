@@ -85,13 +85,66 @@
     </nav>
 
     <!-- Page Hero -->
-    <header class="hero" style="background-image: url('images/dropit-express-hero.png'); height: 400px;">
+    <header class="hero" style="background-image: url('images/drop-off-hero-new.png'); height: 400px;">
         <div class="hero-overlay-natours"></div>
         <div class="container hero-content-centered">
             <h1>Ship Your Package</h1>
             <p>Initiate your shipment in just a few simple steps.</p>
         </div>
     </header>
+
+    <!-- About Drop-Off Section -->
+    <section class="content-section" style="background-color: var(--white);">
+        <div class="container about-preview-content">
+            <div style="flex: 1; min-width: 350px;">
+                <span class="section-label">Our Process</span>
+                <h2 class="section-title-natours">Why Drop-Off?</h2>
+                <h3 class="section-subtitle-natours" style="color: var(--primary-red); letter-spacing: 2px;">FAST &
+                    CONVENIENT</h3>
+                <p style="margin-bottom: 30px; font-size: 1.15rem; color: var(--text-light); line-height: 1.8;">
+                    Our drop-off service is designed to save you time. Simply fill out the digital booking form below,
+                    print your label (or let us do it), and drop your package at any of our 1,000+ branches nationwide.
+                    No more waiting for a courier to arrive at your door.
+                </p>
+                <div class="checklist">
+                    <div class="checklist-item"
+                        style="margin-bottom: 15px; display: flex; align-items: center; gap: 15px;">
+                        <div class="checklist-icon"
+                            style="width: 30px; height: 30px; background: var(--primary-red); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <span class="checklist-text" style="font-size: 1.1rem; font-weight: 500;">Real-time tracking
+                            from the moment you drop off</span>
+                    </div>
+                    <div class="checklist-item"
+                        style="margin-bottom: 15px; display: flex; align-items: center; gap: 15px;">
+                        <div class="checklist-icon"
+                            style="width: 30px; height: 30px; background: var(--primary-red); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <span class="checklist-text" style="font-size: 1.1rem; font-weight: 500;">Secure handling by
+                            professional staff</span>
+                    </div>
+                    <div class="checklist-item"
+                        style="margin-bottom: 15px; display: flex; align-items: center; gap: 15px;">
+                        <div class="checklist-icon"
+                            style="width: 30px; height: 30px; background: var(--primary-red); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <span class="checklist-text" style="font-size: 1.1rem; font-weight: 500;">Lowest rates for
+                            domestic and international shipping</span>
+                    </div>
+                </div>
+            </div>
+            <div style="flex: 1; min-width: 350px;">
+                <div class="image-container"
+                    style="box-shadow: 0 30px 60px rgba(0,0,0,0.15); border-radius: 15px; overflow: hidden;">
+                    <img src="images/dropit-express-hero.png" alt="Drop-Off Process"
+                        style="width: 100%; display: block;">
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Shipment Form Section -->
     <section class="content-section" style="background-color: #fcfcfc;">
@@ -175,7 +228,7 @@
                             </div>
 
                             <div class="btn-next-container">
-                                <button type="button" class="btn-next" onclick="goToStep(2)">
+                                <button type="button" class="btn-next" onclick="goToStep(2)" disabled>
                                     Next step <i class="fa-solid fa-chevron-right"></i>
                                 </button>
                             </div>
@@ -256,7 +309,7 @@
                                 <button type="button" class="btn-prev" onclick="goToStep(1)">
                                     <i class="fa-solid fa-chevron-left"></i> Previous
                                 </button>
-                                <button type="button" class="btn-next" onclick="goToStep(3)">
+                                <button type="button" class="btn-next" onclick="goToStep(3)" disabled>
                                     Next step <i class="fa-solid fa-chevron-right"></i>
                                 </button>
                             </div>
@@ -478,13 +531,58 @@
             handleProvinceChange(senderProvince, senderCity, senderArea, "Philippines");
             handleCityChange(senderCity, senderArea, senderProvince, "Philippines");
 
-            // Tab Switching Logic
+            // Validation Logic
+            function validateStep(stepNumber) {
+                const currentStep = document.getElementById(`step-${stepNumber}`);
+                if (!currentStep) return;
+
+                const inputs = currentStep.querySelectorAll('input[required], select[required]');
+                let isValid = true;
+
+                inputs.forEach(input => {
+                    const value = input.value ? input.value.trim() : "";
+                    if (input.tagName === 'SELECT') {
+                        if (!value || value === "" || input.selectedIndex === 0 || input.disabled) {
+                            isValid = false;
+                        }
+                    } else {
+                        if (!value) {
+                            isValid = false;
+                        }
+                    }
+                });
+
+                const nextBtn = currentStep.querySelector('.btn-next');
+                if (nextBtn) {
+                    nextBtn.disabled = !isValid;
+                }
+            }
+
+            // Monitor all inputs for changes
+            const shipmentForm = document.getElementById('shipment-form');
+            if (shipmentForm) {
+                ['input', 'change'].forEach(eventType => {
+                    shipmentForm.addEventListener(eventType, (e) => {
+                        const step = e.target.closest('.form-step');
+                        if (step) {
+                            const stepNumber = step.id.split('-')[1];
+                            validateStep(stepNumber);
+                        }
+                    });
+                });
+            }
+
+            // Initial call for step 1
+            validateStep(1);
+
+            // Integrate with existing tab logic
             tabDomestic.addEventListener('click', () => {
                 currentShipmentMode = 'domestic';
                 tabDomestic.classList.add('active');
                 tabInternational.classList.remove('active');
                 senderPrefix.textContent = '+63';
                 populateProvinces(senderProvince, "Philippines");
+                validateStep(1); // Re-validate after mode switch
             });
 
             tabInternational.addEventListener('click', () => {
@@ -492,65 +590,76 @@
                 tabInternational.classList.add('active');
                 tabDomestic.classList.remove('active');
                 senderPrefix.textContent = '+';
-                // Reset/Change sender options if needed for global sender
+                validateStep(1); // Re-validate after mode switch
+            });
+
+            // Re-validate when location data updates
+            [senderProvince, senderCity, recipientCountry, recipientProvince, recipientCity].forEach(el => {
+                if (el) {
+                    el.addEventListener('change', () => {
+                        const step = el.closest('.form-step');
+                        if (step) {
+                            const stepNumber = step.id.split('-')[1];
+                            setTimeout(() => validateStep(stepNumber), 10);
+                        }
+                    });
+                }
             });
 
             // Recipient Logic (Step 2)
-            recipientCountry.addEventListener('change', () => {
-                const country = recipientCountry.value;
+            if (recipientCountry) {
+                recipientCountry.addEventListener('change', () => {
+                    const country = recipientCountry.value;
+                    const prefixes = {
+                        "Philippines": "+63",
+                        "Japan": "+81",
+                        "Thailand": "+66",
+                        "Hong Kong": "+852",
+                        "China": "+86",
+                        "Singapore": "+65",
+                        "Malaysia": "+60",
+                        "Indonesia": "+62"
+                    };
+                    recipientPrefix.textContent = prefixes[country] || "+";
+                    populateProvinces(recipientProvince, country);
+                });
+            }
 
-                // Update Prefix based on country
-                const prefixes = {
-                    "Philippines": "+63",
-                    "Japan": "+81",
-                    "Thailand": "+66",
-                    "Hong Kong": "+852",
-                    "China": "+86",
-                    "Singapore": "+65",
-                    "Malaysia": "+60",
-                    "Indonesia": "+62"
-                };
-                recipientPrefix.textContent = prefixes[country] || "+";
+            if (recipientProvince) {
+                recipientProvince.addEventListener('change', () => {
+                    const country = recipientCountry.value;
+                    const province = recipientProvince.value;
+                    const cities = locationData[country][province];
+                    recipientCity.innerHTML = '<option value="" disabled selected>City</option>';
+                    recipientArea.innerHTML = '<option value="" disabled selected>Area</option>';
+                    if (cities) {
+                        Object.keys(cities).forEach(city => {
+                            const option = document.createElement('option');
+                            option.value = city;
+                            option.textContent = city;
+                            recipientCity.appendChild(option);
+                        });
+                    }
+                });
+            }
 
-                // Populate Recipient Locations
-                populateProvinces(recipientProvince, country);
-            });
-
-            handleProvinceChange(recipientProvince, recipientCity, recipientArea, "");
-            handleCityChange(recipientCity, recipientArea, recipientProvince, "");
-
-            // Override handleProvinceChange to dynamically get country
-            recipientProvince.addEventListener('change', () => {
-                const country = recipientCountry.value;
-                const province = recipientProvince.value;
-                const cities = locationData[country][province];
-                recipientCity.innerHTML = '<option value="" disabled selected>City</option>';
-                recipientArea.innerHTML = '<option value="" disabled selected>Area</option>';
-                if (cities) {
-                    Object.keys(cities).forEach(city => {
-                        const option = document.createElement('option');
-                        option.value = city;
-                        option.textContent = city;
-                        recipientCity.appendChild(option);
-                    });
-                }
-            });
-
-            recipientCity.addEventListener('change', () => {
-                const country = recipientCountry.value;
-                const province = recipientProvince.value;
-                const city = recipientCity.value;
-                const areas = locationData[country][province][city];
-                recipientArea.innerHTML = '<option value="" disabled selected>Area</option>';
-                if (areas) {
-                    areas.forEach(area => {
-                        const option = document.createElement('option');
-                        option.value = area;
-                        option.textContent = area;
-                        recipientArea.appendChild(option);
-                    });
-                }
-            });
+            if (recipientCity) {
+                recipientCity.addEventListener('change', () => {
+                    const country = recipientCountry.value;
+                    const province = recipientProvince.value;
+                    const city = recipientCity.value;
+                    const areas = locationData[country][province][city];
+                    recipientArea.innerHTML = '<option value="" disabled selected>Area</option>';
+                    if (areas) {
+                        areas.forEach(area => {
+                            const option = document.createElement('option');
+                            option.value = area;
+                            option.textContent = area;
+                            recipientArea.appendChild(option);
+                        });
+                    }
+                });
+            }
         });
     </script>
 

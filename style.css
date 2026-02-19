@@ -1688,6 +1688,35 @@ footer {
     gap: 20px;
 }
 
+.btn-next {
+    background: var(--primary-red);
+    color: white;
+    border: none;
+    padding: 18px 60px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(230, 0, 0, 0.1);
+}
+
+.btn-next:hover:not(:disabled) {
+    background: var(--dark-red);
+    box-shadow: 0 15px 30px rgba(230, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+.btn-next:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
 .btn-prev {
     background: white;
     color: #666;
