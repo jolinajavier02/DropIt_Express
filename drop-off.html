@@ -315,16 +315,168 @@
                             </div>
                         </div>
 
-                        <!-- Placeholder for Step 3 & 4 -->
+                        <!-- Step 3: Package Information -->
                         <div class="form-step" id="step-3">
-                            <div class="form-section-title">PACKAGE INFORMATION</div>
-                            <p>Package details form coming soon...</p>
+                            <div class="form-section-title">BOOKING INFORMATION</div>
+
+                            <!-- Pricing Summary Header -->
+                            <div class="fee-summary-container">
+                                <div class="price-box">
+                                    <div class="total-charge-display"><span style="margin-right: 5px;">₱</span><span
+                                            id="display-total-fee">0</span></div>
+                                    <p class="important-note" id="pickup-note">* Door to door pick up schedule</p>
+                                </div>
+                                <div class="parcel-type-selector">
+                                    <div class="parcel-card active" onclick="selectParcelType('super', 25)">
+                                        <div class="badge">SP</div>
+                                        <h4>DropIt Super</h4>
+                                        <p class="service-fee">Service Fee <strong>25 PHP</strong></p>
+                                    </div>
+                                    <div class="parcel-card" onclick="selectParcelType('ez', 0)">
+                                        <div class="badge" style="background: #999;">EZ</div>
+                                        <h4>EZ</h4>
+                                        <p class="service-fee">No extra fee</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="package-form-grid">
+                                <!-- Left Column -->
+                                <div class="package-form-left">
+                                    <div class="form-group">
+                                        <label><i class="fa-solid fa-box-open"></i> Item Name</label>
+                                        <input type="text" class="form-control" name="item-name"
+                                            placeholder="Please enter the Item Name" required>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label><i class="fa-solid fa-weight-hanging"></i> Weight(KG)</label>
+                                            <input type="number" class="form-control" id="pkg-weight" name="weight"
+                                                value="1" min="0.1" step="0.1" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label><i class="fa-solid fa-tags"></i> Item Category</label>
+                                            <select class="form-control" name="category" required>
+                                                <option value="PARCEL">PARCEL</option>
+                                                <option value="DOCUMENT">DOCUMENT</option>
+                                                <option value="ELECTRONICS">ELECTRONICS</option>
+                                                <option value="FOOD">FOOD</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label><i class="fa-solid fa-shield-halved"></i> Goods Value(PHP)</label>
+                                        <input type="number" class="form-control" id="pkg-value" name="goods-value"
+                                            placeholder="Please enter the Goods Value" required>
+                                        <p class="important-note">Valuation fee will be 1% of goods value</p>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label><i class="fa-solid fa-hand-holding-dollar"></i> COD Amount(PHP)</label>
+                                        <input type="number" class="form-control" id="pkg-cod" name="cod-amount"
+                                            placeholder="Optional COD Amount">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label><i class="fa-solid fa-box"></i> Packaging Service</label>
+                                        <select class="form-control" id="pkg-box" name="packaging">
+                                            <option value="none" data-price="0">None (Own Packaging)</option>
+                                            <option value="small" data-price="40">DropIt Box Small (36*27*18 cm) - 40
+                                                PHP</option>
+                                            <option value="medium" data-price="60">DropIt Box Medium (45*35*25 cm) - 60
+                                                PHP</option>
+                                            <option value="large" data-price="90">DropIt Box Large (55*45*35 cm) - 90
+                                                PHP</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Right Column -->
+                                <div class="package-form-right">
+                                    <div class="form-group">
+                                        <label><i class="fa-solid fa-list-ol"></i> Quantity</label>
+                                        <input type="number" class="form-control" name="quantity" value="1" min="1"
+                                            required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="calculation-item">
+                                            <div class="label">Valuation Fee(PHP)</div>
+                                            <div class="value"><span>₱</span><span id="calc-valuation">0</span></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="calculation-item">
+                                            <div class="label">COD Fee(PHP)</div>
+                                            <div class="value"><span>₱</span><span id="calc-cod-fee">0</span></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="calculation-item">
+                                            <div class="label">Box Price(PHP)</div>
+                                            <div class="value"><span>₱</span><span id="calc-box-price">0</span></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Dimensions (CM)</label>
+                                        <div class="measurement-inputs">
+                                            <div class="measurement-field">
+                                                <input type="number" class="form-control" id="pkg-length" name="length"
+                                                    placeholder="L" min="1">
+                                                <span class="unit">cm</span>
+                                            </div>
+                                            <div class="measurement-field">
+                                                <input type="number" class="form-control" id="pkg-width" name="width"
+                                                    placeholder="W" min="1">
+                                                <span class="unit">cm</span>
+                                            </div>
+                                            <div class="measurement-field">
+                                                <input type="number" class="form-control" id="pkg-height" name="height"
+                                                    placeholder="H" min="1">
+                                                <span class="unit">cm</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="weight-calculations">
+                                        <div class="weight-calc-item">Volume Weight: <strong id="calc-vol-weight">0
+                                                KG</strong></div>
+                                        <div class="weight-calc-item">Chargeable Weight: <strong
+                                                id="calc-charge-weight">1 KG</strong></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group" style="margin-top: 30px;">
+                                <label>Remarks</label>
+                                <textarea class="form-control" name="remarks"
+                                    placeholder="Add any special instructions..." style="height: 80px;"></textarea>
+                            </div>
+
+                            <div class="agreement-section">
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="tax-info" name="tax-info">
+                                    <label for="tax-info">Sender Tax Info. (Optional)</label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="terms-agree" name="terms-agree" required>
+                                    <label for="terms-agree">I have read, understand and agreed to the <a
+                                            href="#">《TermsandCondition》</a>. Official Receipt will be available within
+                                        seven (7) days, you may claim your OR/s in our branch.</label>
+                                </div>
+                            </div>
+
                             <div class="btn-next-container">
                                 <button type="button" class="btn-prev" onclick="goToStep(2)">
                                     <i class="fa-solid fa-chevron-left"></i> Previous
                                 </button>
-                                <button type="button" class="btn-next" onclick="goToStep(4)">
-                                    Finish <i class="fa-solid fa-check"></i>
+                                <button type="button" class="btn-next" id="final-submit" onclick="goToStep(4)" disabled>
+                                    Next step <i class="fa-solid fa-chevron-right"></i>
                                 </button>
                             </div>
                         </div>
@@ -336,6 +488,15 @@
                                     style="font-size: 4rem; color: #2ecc71; margin-bottom: 20px;"></i>
                                 <h3>Thank You!</h3>
                                 <p>Your shipment has been successfully scheduled.</p>
+                                <div class="order-summary-card"
+                                    style="background: #f9f9f9; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                                    <p>Total Amount Paid: <strong
+                                            style="color: var(--primary-red); font-size: 1.5rem;">₱<span
+                                                id="final-price-display">0</span></strong></p>
+                                    <p>Tracking Number: <strong>DIX-
+                                            <?php echo rand(1000000, 9999999); ?>782934
+                                        </strong></p>
+                                </div>
                                 <a href="index.html" class="btn-primary-natours" style="margin-top: 30px;">Return
                                     Home</a>
                             </div>
@@ -349,29 +510,50 @@
     <script>
         const locationData = {
             "Philippines": {
+                "Abra": { "Bangued": ["Poblacion", "Zone 1", "Zone 2"], "Bucay": ["Poblacion", "Siblong"], "Dolores": ["Poblacion", "Mudiit"] },
+                "Agusan del Norte": { "Butuan City": ["Libertad", "Ambago"], "Cabadbaran City": ["Poblacion", "Mabini"] },
+                "Albay": { "Legazpi City": ["Albay District", "Rawis", "Bitano"], "Tabaco City": ["Poblacion", "San Roque"] },
+                "Aklan": { "Kalibo": ["Poblacion", "New Buswang"], "Boracay (Malay)": ["Balabag", "Manoc-Manoc", "Yapak"] },
+                "Bataan": { "Balanga City": ["Poblacion", "Bagong Silang"], "Mariveles": ["Alas-asin", "Camaya"] },
+                "Batangas": { "Batangas City": ["Alangilan", "Bolbok", "Kumintang"], "Lipa City": ["Marawoy", "Sabang", "Tambô"], "Tanauan City": ["Poblacion", "Darasa"] },
+                "Benguet": { "Baguio City": ["Session Road", "Burnham Park", "Irisan"], "La Trinidad": ["Poblacion", "Pico"] },
+                "Bohol": { "Tagbilaran City": ["Poblacion", "Manga"], "Panglao": ["Tawala", "Bolod"] },
+                "Bulacan": { "Malolos City": ["Guinhawa", "Longos"], "Meycauayan City": ["Bancal", "Calvario"], "San Jose del Monte": ["Muzon", "Sapang Palay"] },
+                "Cagayan": { "Tuguegarao City": ["Poblacion", "Carig"], "Aparri": ["Poblacion", "Maura"] },
+                "Camarines Sur": { "Naga City": ["Centro", "Concepcion Pequeña"], "Iriga City": ["Poblacion", "San Roque"] },
+                "Cavite": { "Imus City": ["Anabu", "Bayan Luma"], "Bacoor City": ["Molino", "Habay"], "Dasmariñas City": ["Salitran", "Langkaan"], "Tagaytay City": ["Maharlika", "Mendez"] },
+                "Cebu": { "Cebu City": ["Lahug", "Mabolo", "Banilad", "Pasil"], "Mandaue City": ["Subangdaku", "Bakilid"], "Lapu-Lapu City": ["Basak", "Marigondon"], "Talisay City": ["Poblacion", "Bulacao"] },
+                "Davao del Norte": { "Tagum City": ["Mankilam", "Apokon"], "Panabo City": ["Poblacion", "Salvacion"] },
+                "Davao del Sur": { "Davao City": ["Agdao", "Buhangin", "Talomo", "Toril", "Bunawan"], "Digos City": ["Poblacion", "Tres de Mayo"] },
+                "Ilocos Norte": { "Laoag City": ["Poblacion", "San Nicolas"], "Batac City": ["Poblacion", "Paoay"] },
+                "Iloilo": { "Iloilo City": ["Mandurriao", "Molo", "Jaro", "Lapaz"], "Passi City": ["Poblacion", "Salngan"] },
+                "Isabela": { "Ilagan City": ["Poblacion", "Guinatan"], "Cauayan City": ["Poblacion", "San Fermin"] },
+                "Laguna": { "Santa Rosa City": ["Balibago", "Don Jose"], "Calamba City": ["Canlubang", "Real"], "Biñan City": ["Mamplasan", "San Vicente"], "San Pablo City": ["Poblacion", "Schetelig"] },
+                "La Union": { "San Fernando City": ["Poblacion", "Carlatan"], "Bauang": ["Poblacion", "Paringao"] },
+                "Leyte": { "Tacloban City": ["Poblacion", "Abucay"], "Ormoc City": ["Poblacion", "Valencia"] },
                 "Metro Manila": {
-                    "Manila City": ["Binondo", "Ermita", "Intramuros", "Malate", "Quiapo", "Sampaloc"],
-                    "Quezon City": ["Diliman", "Cubao", "Libis", "Novaliches", "Katipunan"],
-                    "Makati City": ["Bel-Air", "Poblacion", "San Lorenzo", "Urdaneta", "Guadalupe"],
-                    "Taguig City": ["BGC", "Fort Bonifacio", "Western Bicutan"],
-                    "Pasig City": ["Kapitolyo", "Ortigas", "Ugong"]
+                    "Manila City": ["Binondo", "Ermita", "Intramuros", "Malate", "Quiapo", "Sampaloc", "Tondo"],
+                    "Quezon City": ["Diliman", "Cubao", "Libis", "Novaliches", "Katipunan", "Fairview"],
+                    "Makati City": ["Bel-Air", "Poblacion", "San Lorenzo", "Urdaneta", "Guadalupe", "Magallanes"],
+                    "Taguig City": ["BGC", "Fort Bonifacio", "Western Bicutan", "Signal Village"],
+                    "Pasig City": ["Kapitolyo", "Ortigas", "Ugong", "Caniogan"],
+                    "Pasay City": ["Baclaran", "Malibay", "Newport City"],
+                    "Parañaque City": ["Baclaran", "Don Bosco", "BF Homes", "Moonwalk"]
                 },
-                "Cebu": {
-                    "Cebu City": ["Lahug", "Mabolo", "Pasil", "Tisa", "Banilad"],
-                    "Lapu-Lapu City": ["Basak", "Marigondon", "Pajo", "Punta Engaño"],
-                    "Mandaue City": ["Bakilid", "Banilad", "Subangdaku"]
-                },
-                "Davao": {
-                    "Davao City": ["Agdao", "Buhangin", "Talomo", "Toril", "Bunawan"]
-                },
-                "Batangas": {
-                    "Batangas City": ["Alangilan", "Bolbok", "Kumintang Ibaba"],
-                    "Lipa City": ["Marawoy", "Sabang", "Tambô"]
-                },
-                "Pampanga": {
-                    "Angeles City": ["Balibago", "Pandan", "Sto. Domingo"],
-                    "San Fernando City": ["Dolores", "Sindalan", "St. Jude"]
-                }
+                "Misamis Oriental": { "Cagayan de Oro City": ["Carmen", "Lapasan"], "Gingoog City": ["Poblacion", "Agusan"] },
+                "Negros Occidental": { "Bacolod City": ["Mansilingan", "Villamonte"], "Talisay City": ["Poblacion", "Concepcion"] },
+                "Negros Oriental": { "Dumaguete City": ["Poblacion", "Bajumpandan"], "Bayawan City": ["Poblacion", "Villareal"] },
+                "Northern Samar": { "Catarman": ["Poblacion", "Dalakit"], "Palapag": ["Talolora", "Pangpang", "Cabatuan"] },
+                "Nueva Ecija": { "Cabanatuan City": ["Poblacion", "Sangitan"], "Gapan City": ["Poblacion", "San Vicente"] },
+                "Palawan": { "Puerto Princesa City": ["Poblacion", "San Jose"], "Coron": ["Poblacion", "Bintuan"] },
+                "Pampanga": { "Angeles City": ["Balibago", "Pandan", "Sto. Domingo"], "San Fernando City": ["Dolores", "Sindalan", "St. Jude"], "Mabalacat City": ["Dau", "Clark"] },
+                "Pangasinan": { "Dagupan City": ["Poblacion", "Lucao"], "Urdaneta City": ["Poblacion", "Nancayasan"], "San Carlos City": ["Poblacion", "Taloy"] },
+                "Quezon": { "Lucena City": ["Poblacion", "Iyam"], "Tayabas City": ["Poblacion", "San Roque"] },
+                "Rizal": { "Antipolo City": ["Poblacion", "San Roque"], "Cainta": ["San Isidro", "Santo Domingo"], "Taytay": ["San Juan", "Dolores"] },
+                "South Cotabato": { "General Santos City": ["Poblacion", "Lagao"], "Koronadal City": ["Poblacion", "Mabini"] },
+                "Tarlac": { "Tarlac City": ["Poblacion", "San Roque"], "Capas": ["Poblacion", "Cristo Rey"] },
+                "Zambales": { "Olongapo City": ["Poblacion", "Subic Bay"], "Subic": ["Poblacion", "Baraca-Camachile"] },
+                "Zamboanga Sibugay": { "Ipil": ["Poblacion", "Sanito"], "Titay": ["Poblacion", "Dalican"] }
             },
             "Japan": {
                 "Tokyo": {
@@ -395,82 +577,96 @@
                 "Hong Kong Island": {
                     "Central & Western": ["Central", "Sheung Wan"],
                     "Wan Chai": ["Causeway Bay", "Wan Chai"]
-                },
-                "Kowloon": {
-                    "Yau Tsim Mong": ["Tsim Sha Tsui", "Mong Kok"]
                 }
             },
             "China": {
                 "Beijing": {
                     "Dongcheng": ["Wangfujing", "Dongdan"],
                     "Chaoyang": ["Sanlitun", "CBD"]
-                },
-                "Shanghai": {
-                    "Pudong": ["Lujiazui", "Waigaoqiao"],
-                    "Huangpu": ["The Bund", "People's Square"]
                 }
             },
-            "Singapore": {
-                "Singapore": {
-                    "Central Region": ["Orchard", "Marina Bay", "River Valley"],
-                    "East Region": ["Changi", "Tampines"],
-                    "West Region": ["Jurong", "Clementi"]
-                }
-            },
-            "Malaysia": {
-                "Selangor": {
-                    "Kuala Lumpur": ["Bukit Bintang", "KLCC", "Bangsar"],
-                    "Petaling Jaya": ["SS2", "Damansara Utama"]
-                },
-                "Penang": {
-                    "George Town": ["Tanjung Bungah", "Bayan Lepas"]
-                }
-            },
-            "Indonesia": {
-                "Jakarta": {
-                    "South Jakarta": ["Senopati", "Kemang"],
-                    "Central Jakarta": ["Menteng", "Sudirman"]
-                },
-                "Bali": {
-                    "Badung": ["Kuta", "Seminyak", "Ubud"]
-                }
-            }
+            "Singapore": { "Singapore": { "Central Region": ["Orchard", "Marina Bay"], "East Region": ["Changi", "Tampines"] } },
+            "Malaysia": { "Selangor": { "Kuala Lumpur": ["Bukit Bintang", "KLCC"], "Petaling Jaya": ["SS2", "Damansara"] } },
+            "Indonesia": { "Jakarta": { "South Jakarta": ["Senopati", "Kemang"] }, "Bali": { "Badung": ["Kuta", "Seminyak", "Ubud"] } }
         };
 
+        let currentServiceFee = 25; // Default for J&T Super
+
+        function selectParcelType(type, fee) {
+            currentServiceFee = fee;
+            document.querySelectorAll('.parcel-card').forEach(card => card.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            calculateFees();
+        }
+
+        function calculateFees() {
+            const weight = parseFloat(document.getElementById('pkg-weight').value) || 0;
+            const goodsValue = parseFloat(document.getElementById('pkg-value').value) || 0;
+            const codAmount = parseFloat(document.getElementById('pkg-cod').value) || 0;
+            const boxSelect = document.getElementById('pkg-box');
+            const boxPrice = parseFloat(boxSelect.options[boxSelect.selectedIndex].getAttribute('data-price')) || 0;
+
+            const length = parseFloat(document.getElementById('pkg-length').value) || 0;
+            const width = parseFloat(document.getElementById('pkg-width').value) || 0;
+            const height = parseFloat(document.getElementById('pkg-height').value) || 0;
+
+            // Volume Weight Calculation (L*W*H / 3500)
+            const volWeight = (length * width * height) / 3500;
+            document.getElementById('calc-vol-weight').textContent = volWeight.toFixed(2) + " KG";
+
+            // Chargeable Weight (Max of actual and volume weight)
+            const chargeableWeight = Math.max(weight, volWeight);
+            document.getElementById('calc-charge-weight').textContent = Math.ceil(chargeableWeight) + " KG";
+
+            // Base Shipping Fee (Domestic estimate)
+            let baseShipping = 115;
+            if (chargeableWeight > 1) {
+                baseShipping += (Math.ceil(chargeableWeight) - 1) * 85; // Extra 85 PHP per KG
+            }
+
+            // Valuation Fee (1% of Goods Value)
+            const valuationFee = goodsValue * 0.01;
+            document.getElementById('calc-valuation').textContent = valuationFee.toFixed(2);
+
+            // COD Fee (2% of COD Amount)
+            const codFee = codAmount * 0.02;
+            document.getElementById('calc-cod-fee').textContent = codFee.toFixed(2);
+
+            // Box Price
+            document.getElementById('calc-box-price').textContent = boxPrice;
+
+            // Total Final Calculation
+            const totalFee = baseShipping + currentServiceFee + valuationFee + codFee + boxPrice;
+            document.getElementById('display-total-fee').textContent = Math.ceil(totalFee);
+            document.getElementById('final-price-display').textContent = Math.ceil(totalFee);
+
+            validateStep(3);
+        }
+
         function goToStep(stepNumber) {
-            // Update active step in UI
             document.querySelectorAll('.form-step').forEach(step => step.classList.remove('active'));
             document.getElementById(`step-${stepNumber}`).classList.add('active');
 
-            // Update stepper visual
             const steps = document.querySelectorAll('.step-item');
             steps.forEach((s, index) => {
-                if (index < stepNumber) {
-                    s.classList.add('active');
-                } else {
-                    s.classList.remove('active');
-                }
+                if (index < stepNumber) s.classList.add('active');
+                else s.classList.remove('active');
             });
 
-            // Scroll to top of form
             const formContainer = document.querySelector('.booking-form-container');
-            window.scrollTo({
-                top: formContainer.offsetTop - 100,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: formContainer.offsetTop - 100, behavior: 'smooth' });
+
+            if (stepNumber === 3) calculateFees();
+            validateStep(stepNumber);
         }
 
         document.addEventListener('DOMContentLoaded', function () {
             const tabDomestic = document.getElementById('tab-domestic');
             const tabInternational = document.getElementById('tab-international');
-
-            // Sender Fields
             const senderProvince = document.getElementById('sender-province');
             const senderCity = document.getElementById('sender-city');
             const senderArea = document.getElementById('sender-area');
             const senderPrefix = document.getElementById('sender-prefix');
-
-            // Recipient Fields
             const recipientCountry = document.getElementById('recipient-country');
             const recipientProvince = document.getElementById('recipient-province');
             const recipientCity = document.getElementById('recipient-city');
@@ -483,7 +679,7 @@
                 const data = locationData[country];
                 selectElement.innerHTML = '<option value="" disabled selected>Province</option>';
                 if (data) {
-                    Object.keys(data).forEach(prov => {
+                    Object.keys(data).sort().forEach(prov => {
                         const option = document.createElement('option');
                         option.value = prov;
                         option.textContent = prov;
@@ -494,12 +690,13 @@
 
             function handleProvinceChange(provinceSelect, citySelect, areaSelect, country) {
                 provinceSelect.addEventListener('change', () => {
+                    const countryToUse = country || (provinceSelect.id.includes('recipient') ? recipientCountry.value : "Philippines");
                     const province = provinceSelect.value;
-                    const cities = locationData[country][province];
+                    const cities = locationData[countryToUse][province];
                     citySelect.innerHTML = '<option value="" disabled selected>City</option>';
                     areaSelect.innerHTML = '<option value="" disabled selected>Area</option>';
                     if (cities) {
-                        Object.keys(cities).forEach(city => {
+                        Object.keys(cities).sort().forEach(city => {
                             const option = document.createElement('option');
                             option.value = city;
                             option.textContent = city;
@@ -511,12 +708,13 @@
 
             function handleCityChange(citySelect, areaSelect, provinceSelect, country) {
                 citySelect.addEventListener('change', () => {
+                    const countryToUse = country || (citySelect.id.includes('recipient') ? recipientCountry.value : "Philippines");
                     const province = provinceSelect.value;
                     const city = citySelect.value;
-                    const areas = locationData[country][province][city];
+                    const areas = locationData[countryToUse][province][city];
                     areaSelect.innerHTML = '<option value="" disabled selected>Area</option>';
                     if (areas) {
-                        areas.forEach(area => {
+                        areas.sort().forEach(area => {
                             const option = document.createElement('option');
                             option.value = area;
                             option.textContent = area;
@@ -526,12 +724,10 @@
                 });
             }
 
-            // Initialization for Sender (Step 1)
             populateProvinces(senderProvince, "Philippines");
             handleProvinceChange(senderProvince, senderCity, senderArea, "Philippines");
             handleCityChange(senderCity, senderArea, senderProvince, "Philippines");
 
-            // Validation Logic
             function validateStep(stepNumber) {
                 const currentStep = document.getElementById(`step-${stepNumber}`);
                 if (!currentStep) return;
@@ -542,47 +738,39 @@
                 inputs.forEach(input => {
                     const value = input.value ? input.value.trim() : "";
                     if (input.tagName === 'SELECT') {
-                        if (!value || value === "" || input.selectedIndex === 0 || input.disabled) {
-                            isValid = false;
-                        }
+                        if (!value || value === "" || input.selectedIndex === 0 || input.disabled) isValid = false;
+                    } else if (input.type === 'checkbox') {
+                        if (!input.checked) isValid = false;
                     } else {
-                        if (!value) {
-                            isValid = false;
-                        }
+                        if (!value) isValid = false;
                     }
                 });
 
                 const nextBtn = currentStep.querySelector('.btn-next');
-                if (nextBtn) {
-                    nextBtn.disabled = !isValid;
-                }
+                if (nextBtn) nextBtn.disabled = !isValid;
             }
 
-            // Monitor all inputs for changes
             const shipmentForm = document.getElementById('shipment-form');
             if (shipmentForm) {
-                ['input', 'change'].forEach(eventType => {
-                    shipmentForm.addEventListener(eventType, (e) => {
-                        const step = e.target.closest('.form-step');
-                        if (step) {
-                            const stepNumber = step.id.split('-')[1];
-                            validateStep(stepNumber);
-                        }
-                    });
+                shipmentForm.addEventListener('input', (e) => {
+                    const step = e.target.closest('.form-step');
+                    if (step) validateStep(step.id.split('-')[1]);
+                    if (step && step.id === 'step-3') calculateFees();
+                });
+                shipmentForm.addEventListener('change', (e) => {
+                    const step = e.target.closest('.form-step');
+                    if (step) validateStep(step.id.split('-')[1]);
+                    if (step && step.id === 'step-3') calculateFees();
                 });
             }
 
-            // Initial call for step 1
-            validateStep(1);
-
-            // Integrate with existing tab logic
             tabDomestic.addEventListener('click', () => {
                 currentShipmentMode = 'domestic';
                 tabDomestic.classList.add('active');
                 tabInternational.classList.remove('active');
                 senderPrefix.textContent = '+63';
                 populateProvinces(senderProvince, "Philippines");
-                validateStep(1); // Re-validate after mode switch
+                validateStep(1);
             });
 
             tabInternational.addEventListener('click', () => {
@@ -590,76 +778,20 @@
                 tabInternational.classList.add('active');
                 tabDomestic.classList.remove('active');
                 senderPrefix.textContent = '+';
-                validateStep(1); // Re-validate after mode switch
+                validateStep(1);
             });
 
-            // Re-validate when location data updates
-            [senderProvince, senderCity, recipientCountry, recipientProvince, recipientCity].forEach(el => {
-                if (el) {
-                    el.addEventListener('change', () => {
-                        const step = el.closest('.form-step');
-                        if (step) {
-                            const stepNumber = step.id.split('-')[1];
-                            setTimeout(() => validateStep(stepNumber), 10);
-                        }
-                    });
-                }
+            recipientCountry.addEventListener('change', () => {
+                const country = recipientCountry.value;
+                const prefixes = { "Philippines": "+63", "Japan": "+81", "Thailand": "+66", "Hong Kong": "+852", "China": "+86", "Singapore": "+65", "Malaysia": "+60", "Indonesia": "+62" };
+                recipientPrefix.textContent = prefixes[country] || "+";
+                populateProvinces(recipientProvince, country);
             });
 
-            // Recipient Logic (Step 2)
-            if (recipientCountry) {
-                recipientCountry.addEventListener('change', () => {
-                    const country = recipientCountry.value;
-                    const prefixes = {
-                        "Philippines": "+63",
-                        "Japan": "+81",
-                        "Thailand": "+66",
-                        "Hong Kong": "+852",
-                        "China": "+86",
-                        "Singapore": "+65",
-                        "Malaysia": "+60",
-                        "Indonesia": "+62"
-                    };
-                    recipientPrefix.textContent = prefixes[country] || "+";
-                    populateProvinces(recipientProvince, country);
-                });
-            }
+            handleProvinceChange(recipientProvince, recipientCity, recipientArea);
+            handleCityChange(recipientCity, recipientArea, recipientProvince);
 
-            if (recipientProvince) {
-                recipientProvince.addEventListener('change', () => {
-                    const country = recipientCountry.value;
-                    const province = recipientProvince.value;
-                    const cities = locationData[country][province];
-                    recipientCity.innerHTML = '<option value="" disabled selected>City</option>';
-                    recipientArea.innerHTML = '<option value="" disabled selected>Area</option>';
-                    if (cities) {
-                        Object.keys(cities).forEach(city => {
-                            const option = document.createElement('option');
-                            option.value = city;
-                            option.textContent = city;
-                            recipientCity.appendChild(option);
-                        });
-                    }
-                });
-            }
-
-            if (recipientCity) {
-                recipientCity.addEventListener('change', () => {
-                    const country = recipientCountry.value;
-                    const province = recipientProvince.value;
-                    const city = recipientCity.value;
-                    const areas = locationData[country][province][city];
-                    recipientArea.innerHTML = '<option value="" disabled selected>Area</option>';
-                    if (areas) {
-                        areas.forEach(area => {
-                            const option = document.createElement('option');
-                            option.value = area;
-                            option.textContent = area;
-                            recipientArea.appendChild(option);
-                        });
-                    }
-                });
-            }
+            validateStep(1);
         });
     </script>
 
